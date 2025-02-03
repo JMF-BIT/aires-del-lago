@@ -1,11 +1,8 @@
 import "./App.css";
+import Template from "./page/Template/Template";
 
 function App() {
-  return (
-    <>
-      <div>hola</div>
-    </>
-  );
+  return Template();
 }
 
 export default App;
