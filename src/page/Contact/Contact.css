@@ -1,0 +1,18 @@
+.contactContainer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formContainer {
+  background-color: hwb(0 50% 50% / 0.637);
+  max-width: 1200px;
+}
+
+.textArea {
+  width: 300px;
+  height: 100px;
+}
