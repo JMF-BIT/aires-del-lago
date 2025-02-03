@@ -11,9 +11,9 @@ body {
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
-  background: url("Ihome/fondo.jpg") no-repeat center center;
+
+  background: url("Ihome/fondo.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 /* 🔝 Header y Navegación */

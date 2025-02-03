@@ -1,59 +1,52 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Home.css";
+import { Grid, Box } from "@mui/material";
 
 const Home = () => {
   return (
-    <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-              <a href="#">Kuntur</a>
-            </li>
-            <li>
-              <a href="#">Domos</a>
-            </li>
-            <li>
-              <a href="#">Tarifas</a>
-            </li>
-            <li>
-              <a href="#">Actividades</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <main>
-        <section className="hero">
+    <Box className="mainBox">
+      <Box className="boxTextSup">
+        <Grid item xs={12} className="gridConteinerBoxSup">
           <h1>Bienvenidos a</h1>
           <p>La escapada que necesitás.</p>
-        </section>
-
-        <section className="experience">
+        </Grid>
+        <Grid item xs={12} className="gridConteinerBoxImgSup">
+          {/* imagen */}
+        </Grid>
+        <Grid item xs={12} className="gridConteinerBoxTextSup2">
           <h2>Viví la experiencia KUNTUR</h2>
           <p>
             Llevamos la experiencia de glamping al siguiente nivel, manteniendo
             la simbiosis perfecta entre naturaleza y confort.
           </p>
-        </section>
+        </Grid>
+      </Box>
 
-        <section className="domos">
-          <article className="domo">
+      <Box className="BoxConteinHouse">
+        <Grid container spacing={3} className="gridConteinerBoxHouse">
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={4}
+            className="gridLeftConteinerBoxHouse"
+          >
             <img src="Ihome/INTI.jpg" alt="Domo Inti" />
             <h3>Domo INTI</h3>
             <p>
               Concepto único para 2 personas que buscan una escapada romántica.
             </p>
             <a href="#">Ver más</a>
-          </article>
-          <article className="domo">
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={4}
+            className="gridMediumConteinerBoxHouse"
+          >
             <img src="Ihome/WASI.jpg" alt="Domo Wasi" />
             <h3>Domo WASI</h3>
             <p>
@@ -61,34 +54,44 @@ const Home = () => {
               familia o con amigos.
             </p>
             <a href="#">Ver más</a>
-          </article>
-        </section>
-      </main>
+          </Grid>
 
-      <footer className="footer">
-        <div className="social-icons">
-          <a
-            href="https://www.facebook.com/kunturdomo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon"
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={4}
+            className="gridRightConteinerBoxHouse"
           >
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-          </a>
+            <img src="Ihome/WASI.jpg" alt="Domo Wasi" />
+            <h3>Domo Mojito</h3>
+            <p>
+              Diseñado para quienes desean una experiencia inolvidable en
+              familia o con amigos.
+            </p>
+            <a href="#">Ver más</a>
+          </Grid>
+        </Grid>
+      </Box>
 
-          <a
-            href="https://wa.me/5493513535117"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon"
-          >
-            <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-          </a>
-        </div>
-        <p>WhatsApp: +54 9 3513535117</p>
-        <p>Email: kuntur.domo@gmail.com</p>
-      </footer>
-    </>
+      <Box className="boxConteinerFooter">
+        <Grid item xs={12} className="gridConteinerBoxFooter">
+          <footer className="footer">
+            <a href=""></a>
+            <a
+              href="https://wa.me/5493518171664"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon"
+            >
+              <WhatsAppIcon />
+            </a>
+            <p>WhatsApp: +54 9 3518171664</p>
+            <p>Instagram: @airesdellago_</p>
+          </footer>
+        </Grid>
+      </Box>
+    </Box>
   );
 };
 
