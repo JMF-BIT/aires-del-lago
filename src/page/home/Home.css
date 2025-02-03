@@ -1,0 +1,137 @@
+/* Reset básico para quitar márgenes y paddings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 🌍 Estilos Generales */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  background: url("Ihome/fondo.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* 🔝 Header y Navegación */
+header {
+  background: #103f54;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 1.3rem 0;
+  text-align: right;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  margin: 0;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  font-weight: 100;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* 🎇 Hero Section */
+.hero {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ✨ Experiencia Kuntur */
+.experience {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: white;
+}
+
+.experience h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 🏕️ Sección Domos */
+.domos {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 2rem;
+  padding: 4rem;
+  background-color: #f4f4f400;
+}
+
+.domo {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.127);
+  text-align: center;
+  color: white;
+}
+
+.domo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.domo h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.domo p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.domo a {
+  display: inline-block;
+  background: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.domo a:hover {
+  background: #555;
+}
+
+/* 📌 Footer */
+footer {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
