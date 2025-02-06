@@ -100,18 +100,28 @@ const Home = () => {
           </Button>
         </Box>
 
-        <Box id="BoxConteinHouse" className="boxConteinHouse">
-          <Grid container spacing={2}>
+        <Box
+          id="BoxConteinHouse"
+          className="boxConteinHouse"
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "16px",
+          }}
+        >
+          <Grid container spacing={2} sx={{ width: "100%" }}>
             {cardsData.map((card) => (
-              <Grid item xs={12} md={12} lg={4} key={card.id}>
+              <Grid item xs={12} sm={12} md={12} lg={4} key={card.id}>
                 <Card
                   sx={{
                     backgroundColor: "white",
+                    maxWidth: "400px",
                     borderRadius: "10px",
                     paddingBottom: "30px", // Espacio extra en la parte inferior
                     border: "10px solid white", // Borde grueso estilo Polaroid
                     boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
-                    width: "400px", // Más ancho
+                    width: "auto", // Más ancho
                     height: "auto ", // Más alto
                     mx: "auto", // Centrar la tarjeta
                   }}
