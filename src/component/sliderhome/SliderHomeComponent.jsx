@@ -7,10 +7,12 @@ import img1 from "../../imgs/home/1.jpg";
 import img2 from "../../imgs/home/2.jpg";
 import img3 from "../../imgs/home/4.jpg";
 import img4 from "../../imgs/home/6.jpg";
+import img5 from "../../imgs/home/7.jpg";
 
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5];
 
 const SliderComponent = () => {
+  console.log(images);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
