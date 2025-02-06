@@ -1,67 +1,54 @@
-import { Grid, Box } from "@mui/material";
-import "./Template.css";
+import { Box } from "@mui/material";
+import "../../component/ContentSection/ContentSection.css";
 import NavBar from "../../component/navbar/NavBar";
+import ContentSection from "../../component/ContentSection/ContentSection";
+import img1 from "../../imgs/ImagesNosotros/NosotrosImagePrincipalTop.jpg";
+import img2 from "../../imgs/ImagesNosotros/NosotrosCasa1.jpg";
+import img3 from "../../imgs/ImagesNosotros/NosotrosUbicacion.jpg";
 
 const Template = () => {
   return (
     <>
-      <NavBar></NavBar>
+      <NavBar />
 
       <Box
         sx={{
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          backgroundImage: `url(${img1})`,
+          fontSize: { xs: "10px", md: "20px", lg: "20px" },
         }}
+        className="boxImagePrincipalTop"
       >
-        <Box className="imagenGrandePrincipal">
-          <h1 className="imageTitleText">¿Qué es Kuntur?</h1>
-          <p className="imageText">
-            Kuntur es más que domos. Es una experiencia mágica en un lugar
-            remoto <br></br>
-            cargado de increíbles paisajes y posibilidades.
-          </p>
+        <Box className="boxPrincipalTextTop">
+          <h1 className="imagePrincipalTitleText">¡QUIENES SOMOS?</h1>
         </Box>
       </Box>
-      <Box className="boxPrincipal">
-        <Box className="boxTextContainer">
-          <Grid container spacing={2} className="gridContainer">
-            <Grid item xs={12} md={6} className="leftColumn">
-              <h1 className="columTitle">
-                <strong>¿Por qué Kuntur?</strong>
-              </h1>
 
-              {/* Primer párrafo */}
-              <p className="columText">
-                El vocablo Kuntur refiere a una palabra en quechua que significa
-                “Cóndor”. Nuestro nombre nos asocia con la naturaleza y con el
-                dueño indiscutido de los cielos en la inmensidad de las Altas
-                Cumbres.
-              </p>
+      <ContentSection
+        title="Un rincón para compartir y disfrutar"
+        text={[
+          "Nuestro emprendimiento nació de algo simple y hermoso: la alegría de compartir momentos inolvidables con familia y amigos.",
+          "Durante años, pasamos los fines de semana en este lugar mágico, a orillas del Lago Los Molinos, disfrutando de la paz, la naturaleza y la conexión con lo esencial.",
+          "Quisimos llevar esa experiencia más allá y abrirle las puertas a quienes, como nosotros, buscan un espacio para relajarse, desconectar y crear recuerdos inolvidables.",
+          "Así nació este emprendimiento familiar, con el deseo de que más personas descubran y disfruten este rincón especial que tanto amamos.",
+          "Te invitamos a vivir la experiencia, a despertar con vistas al lago, a sentir la brisa fresca y a descubrir la magia de este lugar único. ¡Tu próximo descanso te espera! ✨",
+        ]}
+        imageUrl={img2}
+      />
 
-              {/* Segundo párrafo */}
-              <p className="columText">
-                Somos un concepto exclusivo de domos basado en llevar la
-                experiencia de glamping al siguiente nivel, manteniendo la
-                simbiosis perfecta entre naturaleza y confort.
-              </p>
-
-              {/* Tercer párrafo */}
-              <p className="columText">
-                Enfrentamos para ello el enorme desafío de la construcción de
-                domos geodésicos en un enclave de difícil acceso, hacia donde
-                trasladar materiales era una apuesta difícil, superable sólo con
-                ingenio y perseverancia, viendo crecer de a poco sus resultados,
-                que por eso se valoran doblemente.
-              </p>
-            </Grid>
-            <Grid item xs={12} md={6} className="rightColum">
-              <Box className="rightImage"></Box>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
+      <ContentSection
+        title="UBICACIÓN"
+        text={[
+          "Aires del Lago se encuentra en un entorno privilegiado, sobre el Lago Los Molinos, a solo 80 km de la ciudad de Córdoba, pasando Potrero de Garay.",
+          <p key="space1" style={{ margin: "10px 0" }} />,
+          "Ubicados dentro del exclusivo country náutico 'Puerto del Águila', ofrecemos el equilibrio perfecto entre naturaleza, tranquilidad y confort, con la seguridad y las comodidades que necesitás para una estadía inolvidable.",
+          <p key="space1" style={{ margin: "10px 0" }} />,
+          "Además, estamos a solo 20 minutos de encantadoras localidades turísticas como Villa General Belgrano y Los Reartes, donde podés disfrutar de su gastronomía, cultura y actividades al aire libre.",
+          <p key="space1" style={{ margin: "10px 0" }} />,
+          "¡Un refugio ideal para conectar con la naturaleza sin renunciar al confort! 🌿✨",
+        ]}
+        imageUrl={img3}
+        reverse={true} // La imagen se coloca a la izquierda
+      />
     </>
   );
 };
