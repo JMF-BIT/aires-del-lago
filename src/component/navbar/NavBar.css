@@ -1,5 +1,5 @@
 .navBarContainer {
-  background-color: rgb(253, 251, 251);
+  background-color: rgb(255, 255, 255);
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   flex-flow: column;
   z-index: 1000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Evita que el contenido sobresalga */
+
   color: black;
   display: flex;
   justify-content: center;
@@ -23,10 +23,12 @@
 .navBarItem {
   padding: 10px;
   text-align: center;
+  cursor: pointer;
 }
 .openNavBra {
-  margin: 10px;
-  height: 30px; /* Comienza cerrado */
+  font-size: 15px;
+  margin: 5px;
+  height: 20px; /* Comienza cerrado */
   overflow: hidden; /* Oculta contenido que exceda el alto */
   transition: height 0.3s ease; /* Transición suave para el cambio de altura */
 }
@@ -38,4 +40,21 @@
 
 .openNavBra.active {
   height: auto; /* Ajusta la altura al tamaño deseado */
+}
+
+.closeHouse {
+  height: 0;
+  overflow: hidden;
+}
+
+.openHouse {
+  height: 0; /* Mantiene el contenedor sin tamaño */
+  overflow: visible; /* Permite que los elementos flotantes aparezcan */
+}
+
+.floatingBox {
+  font-size: 12px;
+  position: static;
+  background: white;
+  padding: 5px;
 }

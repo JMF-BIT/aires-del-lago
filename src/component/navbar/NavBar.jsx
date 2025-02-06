@@ -7,6 +7,7 @@ import img7 from "../../imgs/home/Logo.jpg";
 
 const NavBar = () => {
   const [navItem, setNavItem] = useState("openNavBra");
+  const [house, setHouse] = useState("closeHouse");
 
   const navigate = useNavigate();
 
@@ -17,6 +18,15 @@ const NavBar = () => {
       setNavItem("openNavBra");
     }
   };
+
+  const ChangeHouse = () => {
+    if (house == "openHouse") {
+      setHouse("closeHouse");
+    } else {
+      setHouse("openHouse");
+    }
+  };
+
   return (
     <Box className="navBarContainer">
       <Grid
@@ -26,7 +36,6 @@ const NavBar = () => {
           justifyContent: "center", // Center items horizontally
           alignItems: "center", // Center items vertically
           padding: "5px",
-
           gap: 1, // Add spacing between Grid items
         }}
       >
@@ -47,7 +56,7 @@ const NavBar = () => {
         }}
       >
         <Grid
-          md={1.5}
+          md={2}
           lg={0.9}
           className="navBarItem"
           onClick={() => navigate("/home")}
@@ -56,7 +65,7 @@ const NavBar = () => {
           Inicio
         </Grid>
         <Grid
-          md={1.5}
+          md={2}
           lg={0.9}
           className="navBarItem"
           onClick={() => navigate("/quienes-somos")}
@@ -65,16 +74,30 @@ const NavBar = () => {
           Nosotros
         </Grid>
         <Grid
-          md={1.5}
+          md={2}
           lg={0.9}
           className="navBarItem"
-          onClick={() => navigate("/quienes-somos")}
-          sx={{ display: { xs: "none", md: "block" } }}
+          sx={{ display: { xs: "none", md: "block" }, position: "relative" }}
         >
-          Casas
+          <Box onClick={ChangeHouse} pb={"5px"}>
+            Casas
+          </Box>
+
+          {/* Contenedor del dropdown */}
+          <Box className={house}>
+            <Box className="floatingBox" onClick={() => navigate("/aires2")}>
+              Aires 2
+            </Box>
+            <Box className="floatingBox" onClick={() => navigate("/aires3")}>
+              Aires 3
+            </Box>
+            <Box className="floatingBox" onClick={() => navigate("/aires4")}>
+              Aires 4
+            </Box>
+          </Box>
         </Grid>
         <Grid
-          md={1.5}
+          md={2}
           lg={0.9}
           className="navBarItem"
           sx={{ display: { xs: "none", md: "block" } }}
@@ -96,6 +119,7 @@ const NavBar = () => {
           md={1.5}
           lg={0.9}
           sx={{ display: { xs: "block", md: "none" } }}
+          className="navBarItem"
         >
           <MenuIcon />
         </Grid>
@@ -103,35 +127,49 @@ const NavBar = () => {
 
       <Grid
         className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
         onClick={() => navigate("/home")}
       >
         Inicio
       </Grid>
       <Grid
         className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
         onClick={() => navigate("/quienes-somos")}
       >
         Nosotros
       </Grid>
       <Grid
         className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
-        onClick={() => navigate("/quienes-somos")}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
+        onClick={() => navigate("/aires2")}
       >
-        Casas
+        Aires 2
       </Grid>
       <Grid
         className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
+        onClick={() => navigate("/aires3")}
+      >
+        Aires 3
+      </Grid>
+      <Grid
+        className={navItem}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
+        onClick={() => navigate("/aires4")}
+      >
+        Aires 4
+      </Grid>
+      <Grid
+        className={navItem}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
         onClick={() => navigate("/home")}
       >
         Actividades
       </Grid>
       <Grid
         className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
         onClick={() => navigate("/contact")}
       >
         Contacto
