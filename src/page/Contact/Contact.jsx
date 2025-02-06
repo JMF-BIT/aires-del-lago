@@ -1,63 +1,230 @@
-import { Box, Button, Grid, TextField } from "@mui/material";
+import { useState } from "react";
+import { Box, Grid, TextField, Button } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
+import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import "./Contact.css";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import CallIcon from "@mui/icons-material/Call";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TarifaItem from "../../component/tarifaItem/TarifaItem";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    telefono: "",
+    email: "",
+    fechaIngreso: "",
+    fechaEgreso: "",
+    cantidadPersonas: "",
+    mensaje: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendMessageToWhatsApp = () => {
+    const {
+      nombre,
+      telefono,
+      email,
+      fechaIngreso,
+      fechaEgreso,
+      cantidadPersonas,
+      mensaje,
+    } = formData;
+
+    const phoneNumber = "5493518171664"; // Número de WhatsApp de destino (sin + ni 0 inicial)
+    const message = `Hola, me gustaría solicitar información:
+    - Nombre: ${nombre}
+    - Teléfono: ${telefono}
+    - Email: ${email}
+    - Fecha de ingreso: ${fechaIngreso}
+    - Fecha de egreso: ${fechaEgreso}
+    - Cantidad de personas: ${cantidadPersonas}
+    - Mensaje: ${mensaje}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <div>
-      <NavBar></NavBar>
+    <>
+      <NavBar />
       <Box className="contactContainer">
-        <Box className="formContainer">
-          <Grid container>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Nombre completo
+        <Box className="contactImgContainer">Contacto</Box>
+        <Box className="contactTextContainerBox">
+          <Grid container className="contactTextContainer">
+            <Grid
+              xs={12}
+              sm={4}
+              onClick={() =>
+                window.open(
+                  "https://www.google.com/maps/place/31%C2%B050'09.0%22S+64%C2%B033'48.0%22W/@-31.8358307,-64.5659065,17z/data=!4m4!3m3!8m2!3d-31.8358307!4d-64.5633316?hl=es&entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D",
+                  "_blank"
+                )
+              }
+              sx={{ cursor: "pointer" }}
+            >
+              <Box className="contactTextContainerItem">
+                <Box className="contactTextContainerItem-logo">
+                  <FmdGoodIcon sx={{ fontSize: "60px", color: "grey" }} />
+                </Box>
+                <Box className="contactTextContainerItem-title">UBICACIÓN</Box>
+                <Box className="contactTextContainerItem-text"></Box>
+              </Box>
             </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
+            <Grid
+              xs={12}
+              sm={4}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/airesdellago_/",
+                  "_blank"
+                )
+              }
+              sx={{ cursor: "pointer" }}
+            >
+              <Box className="contactTextContainerItem">
+                <Box className="contactTextContainerItem-logo">
+                  <InstagramIcon sx={{ fontSize: "60px", color: "grey" }} />
+                </Box>
+                <Box className="contactTextContainerItem-title">INSTAGRAM</Box>
+                <Box className="contactTextContainerItem-text"></Box>
+              </Box>
             </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Telefono
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Email
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Fecha de infreso
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Fecha de egreso
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              Cantidad de personas
-            </Grid>
-            <Grid xs={6} lg={3} sx={{ padding: 2 }}>
-              <TextField id="filled-basic" variant="filled" />
-            </Grid>
-            <Grid xs={6} sx={{ padding: 2 }}>
-              Mensaje
-            </Grid>
-            <Grid xs={6} sx={{ padding: 2 }}>
-              <textarea className="textArea"></textarea>
-            </Grid>
-            <Grid xs={12} sx={{ padding: 2 }}>
-              <Button variant="contained">Enviar Whatsapp</Button>
+            <Grid
+              xs={12}
+              sm={4}
+              onClick={() =>
+                window.open("https://wa.me/5493518171664", "_blank")
+              }
+              sx={{ cursor: "pointer" }}
+            >
+              <Box className="contactTextContainerItem">
+                <Box className="contactTextContainerItem-logo">
+                  <WhatsAppIcon sx={{ fontSize: "60px", color: "grey" }} />
+                </Box>
+                <Box className="contactTextContainerItem-title">WhatsApp</Box>
+                <Box className="contactTextContainerItem-text"></Box>
+              </Box>
             </Grid>
           </Grid>
         </Box>
+        <Box className="formContainerBack">
+          <Box className="formContainer">
+            <Grid container spacing={2}>
+              <Grid item xs={12} className="contactTitle">
+                Contactanos para reservar
+              </Grid>
+              <Grid item xs={12} className="contactText">
+                Completá el siguiente formulario para consultar Tarifas y
+                Disponibilidades; responderemos a la brevedad.¡Muchas gracias!
+              </Grid>
+              <Grid item xs={6} lg={3}>
+                <TextField
+                  label="Nombre completo"
+                  variant="filled"
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={6} lg={3}>
+                <TextField
+                  label="Teléfono"
+                  variant="filled"
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={6} lg={3}>
+                <TextField
+                  label="Email"
+                  variant="filled"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={6} lg={3}>
+                <TextField
+                  label="Cantidad de personas"
+                  type="number"
+                  variant="filled"
+                  name="cantidadPersonas"
+                  value={formData.cantidadPersonas}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={6} lg={6}>
+                <TextField
+                  label="Fecha de ingreso"
+                  type="date"
+                  variant="filled"
+                  name="fechaIngreso"
+                  value={formData.fechaIngreso}
+                  onChange={handleChange}
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                />
+              </Grid>
+              <Grid item xs={6} lg={6}>
+                <TextField
+                  label="Fecha de egreso"
+                  type="date"
+                  variant="filled"
+                  name="fechaEgreso"
+                  value={formData.fechaEgreso}
+                  onChange={handleChange}
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  label="Mensaje"
+                  variant="filled"
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleChange}
+                  fullWidth
+                  multiline
+                  rows={4}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "gray",
+                    color: "white",
+                    "&:hover": { backgroundColor: "#757575" },
+                  }}
+                  onClick={sendMessageToWhatsApp}
+                >
+                  Enviar WhatsApp
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <TarifaItem
+          texto="dos personas"
+          img={"src/imgs/contact2.JPEG"}
+          noches={"anashe"}
+          precio={"tetas"}
+        ></TarifaItem>
       </Box>
-    </div>
+    </>
   );
 };
 

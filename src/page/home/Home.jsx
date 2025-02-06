@@ -1,5 +1,4 @@
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Home.css";
 import { Grid, Box } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
@@ -8,7 +7,6 @@ const Home = () => {
   return (
     <>
       <NavBar></NavBar>
-
       <Box className="mainBox">
         <Box className="boxTextSup">
           <Grid item xs={12} className="gridConteinerBoxSup">
@@ -26,6 +24,7 @@ const Home = () => {
             </p>
           </Grid>
         </Box>
+
 
         <Box className="BoxConteinHouse">
           <Grid container spacing={3} className="gridConteinerBoxHouse">
