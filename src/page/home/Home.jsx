@@ -25,6 +25,7 @@ const Home = () => {
           </Grid>
         </Box>
 
+
         <Box className="BoxConteinHouse">
           <Grid container spacing={3} className="gridConteinerBoxHouse">
             <Grid
