@@ -217,12 +217,6 @@ const Contact = () => {
             </Grid>
           </Box>
         </Box>
-        <TarifaItem
-          texto="dos personas"
-          img={"src/imgs/contact2.JPEG"}
-          noches={"anashe"}
-          precio={"tetas"}
-        ></TarifaItem>
       </Box>
     </>
   );

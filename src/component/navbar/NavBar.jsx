@@ -25,17 +25,27 @@ const NavBar = () => {
           display: "flex",
           justifyContent: "center", // Center items horizontally
           alignItems: "center", // Center items vertically
-          padding: "10px",
+          padding: "5px",
+
           gap: 1, // Add spacing between Grid items
         }}
       >
-        <Grid xs={2} lg={0.9} onClick={() => navigate("/home")}>
-          <img
-            src={img7}
-            alt="Logo Aires Del Lago"
-            style={{ maxWidth: "80px", maxHeight: "80px" }}
-          />
-        </Grid>
+        <img
+          src={img7}
+          alt="Logo Aires Del Lago"
+          style={{ maxWidth: "120px", maxHeight: "100px" }}
+        />
+      </Grid>
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          justifyContent: "center", // Center items horizontally
+          alignItems: "center", // Center items vertically
+          padding: "5px",
+          gap: 1, // Add spacing between Grid items
+        }}
+      >
         <Grid
           md={1.5}
           lg={0.9}

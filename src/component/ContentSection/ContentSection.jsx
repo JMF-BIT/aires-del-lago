@@ -25,9 +25,13 @@ const ContentSection = ({ title, text, imageUrl, reverse = false }) => {
             <p className="textColumn">{text}</p>
           )}
         </Grid>
-
         <Grid item xs={12} md={6} className="imagePrincipalColumn">
-          <img className="imageColumn" src={imageUrl} alt="Sección Imagen" />
+          <Box
+            sx={{
+              backgroundImage: `url(${imageUrl})`,
+            }}
+            className="imagePrincipalColumnItem"
+          ></Box>
         </Grid>
       </Grid>
     </Box>
