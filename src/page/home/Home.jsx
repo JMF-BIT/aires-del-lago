@@ -1,5 +1,4 @@
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import "./Home.css";
 import { Grid, Box, Button, Typography } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
@@ -35,6 +34,8 @@ const cardsData = [
     description: "Capacidad para 6 personas.",
   },
 ];
+
+
 
 const Home = () => {
   return (
@@ -158,6 +159,9 @@ const Home = () => {
                 className="icon2"
               >
                 <WhatsAppIcon style={{ fontSize: "80px" }} />
+                className="icon"
+              >
+
               </a>
               <p>WhatsApp: +54 9 3518171664</p>
               <p>Instagram: @airesdellago_</p>
