@@ -1,0 +1,39 @@
+.tarifaItemContainer {
+}
+
+.tarifaItemImage {
+  width: 300px;
+  height: 370px;
+  background-size: cover;
+  background-position: center;
+}
+
+.tarifaItemTextcontainer {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarifaItemImage2 {
+  z-index: 1;
+  top: -30px;
+  position: relative;
+  color: black;
+  background-color: #fff;
+  border: 2px solid black;
+  width: 150px;
+  flex-flow: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarifaItem {
+  text-align: center;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
