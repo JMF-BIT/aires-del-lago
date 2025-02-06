@@ -3,6 +3,7 @@ import "./NavBar.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import img7 from "../../imgs/home/Logo.jpg";
 
 const NavBar = () => {
   const [navItem, setNavItem] = useState("openNavBra");
@@ -22,12 +23,27 @@ const NavBar = () => {
         container
         sx={{
           display: "flex",
-          justifyContent: { xs: "space-between", md: "start" },
+          justifyContent: "center", // Center items horizontally
+          alignItems: "center", // Center items vertically
           padding: "10px",
+          gap: 1, // Add spacing between Grid items
         }}
       >
         <Grid xs={2} lg={0.9} onClick={() => navigate("/home")}>
-          LOGO
+          <img
+            src={img7}
+            alt="Logo Aires Del Lago"
+            style={{ maxWidth: "80px", maxHeight: "80px" }}
+          />
+        </Grid>
+        <Grid
+          md={1.5}
+          lg={0.9}
+          className="navBarItem"
+          onClick={() => navigate("/home")}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
+          Inicio
         </Grid>
         <Grid
           md={1.5}
@@ -36,25 +52,16 @@ const NavBar = () => {
           onClick={() => navigate("/quienes-somos")}
           sx={{ display: { xs: "none", md: "block" } }}
         >
-          kuntur
+          Nosotros
         </Grid>
         <Grid
           md={1.5}
           lg={0.9}
           className="navBarItem"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/quienes-somos")}
           sx={{ display: { xs: "none", md: "block" } }}
         >
-          Domos
-        </Grid>
-        <Grid
-          md={1.5}
-          lg={0.9}
-          className="navBarItem"
-          sx={{ display: { xs: "none", md: "block" } }}
-          onClick={() => navigate("/home")}
-        >
-          Tarifas
+          Casas
         </Grid>
         <Grid
           md={1.5}
@@ -83,26 +90,27 @@ const NavBar = () => {
           <MenuIcon />
         </Grid>
       </Grid>
+
+      <Grid
+        className={navItem}
+        sx={{ display: { xs: "block", md: "none" } }}
+        onClick={() => navigate("/home")}
+      >
+        Inicio
+      </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none" } }}
         onClick={() => navigate("/quienes-somos")}
       >
-        kuntur
+        Nosotros
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none" } }}
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/quienes-somos")}
       >
-        Domos
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none" } }}
-        onClick={() => navigate("/home")}
-      >
-        Tarifas
+        Casas
       </Grid>
       <Grid
         className={navItem}
