@@ -1,0 +1,129 @@
+/*.boxPrincipal {
+  background-color: white;
+  flex-flow: column;        esto daba incompatibilidad ni idea porq
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}*/
+
+.boxImagePrincipalTop {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxPrincipalTextTop {
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: stretch;
+}
+
+.imagePrincipalTitleText {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  font-size: 55px;
+}
+
+.imagePrincipalText {
+  font-size: 17px;
+  color: azure;
+  text-shadow: black;
+  font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+
+  text-align: center;
+}
+
+.boxGridContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.gridContainer {
+  align-items: stretch;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.textPrincipalColumn {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.textTitleColumn {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  color: black;
+}
+
+.textColumn {
+  letter-spacing: normal;
+  font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  line-height: 2;
+  font-size: 15px;
+  color: black;
+  width: 66%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.textColumn ul {
+  list-style-type: circle; /* Utiliza círculos como puntos */
+  padding-left: 20px; /* Añadir espacio a la izquierda */
+}
+
+.textColumn ul li {
+  font-size: 15px; /* Puedes ajustar el tamaño de la fuente si es necesario */
+  color: black; /* Puedes cambiar el color si lo prefieres */
+  line-height: 1.8; /* Ajuste de la altura de línea */
+}
+
+.imagePrincipalColumn {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.imageColumn {
+  height: 100%; /* Altura automática basada en el contenido */
+  /* No sobrepasa el tamaño del contenedor */
+  width: 100%; /* Mantiene la proporción */
+  /* Se ajusta al ancho del contenedor */
+  object-fit: fill; /* Evita distorsión */
+  background-position: center;
+  background-repeat: no-repeat;
+}
