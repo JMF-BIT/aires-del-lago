@@ -39,11 +39,8 @@ const Template = () => {
         title="UBICACIÓN"
         text={[
           "Aires del Lago se encuentra en un entorno privilegiado, sobre el Lago Los Molinos, a solo 80 km de la ciudad de Córdoba, pasando Potrero de Garay.",
-          <p key="space1" style={{ margin: "10px 0" }} />,
           "Ubicados dentro del exclusivo country náutico 'Puerto del Águila', ofrecemos el equilibrio perfecto entre naturaleza, tranquilidad y confort, con la seguridad y las comodidades que necesitás para una estadía inolvidable.",
-          <p key="space1" style={{ margin: "10px 0" }} />,
           "Además, estamos a solo 20 minutos de encantadoras localidades turísticas como Villa General Belgrano y Los Reartes, donde podés disfrutar de su gastronomía, cultura y actividades al aire libre.",
-          <p key="space1" style={{ margin: "10px 0" }} />,
           "¡Un refugio ideal para conectar con la naturaleza sin renunciar al confort! 🌿✨",
         ]}
         imageUrl={img3}

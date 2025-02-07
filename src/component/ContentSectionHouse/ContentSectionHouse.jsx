@@ -6,7 +6,6 @@ const ContentSectionHouse = ({ title, text, imageUrl, reverse = false }) => {
     <Box className="boxGridContainer">
       <Grid
         container
-        spacing={0}
         className="gridContainer"
         direction={reverse ? "row-reverse" : "row"} // Invierte imagen y texto si reverse = true
       >
@@ -17,9 +16,9 @@ const ContentSectionHouse = ({ title, text, imageUrl, reverse = false }) => {
           {/* Aquí verificamos si text es un array y luego lo mapeamos */}
           {Array.isArray(text) ? (
             text.map((paragraph, index) => (
-              <p key={index} className="textColumn">
+              <div key={index} className="textColumn">
                 {paragraph}
-              </p>
+              </div>
             ))
           ) : (
             <p className="textColumn">{text}</p>
@@ -27,7 +26,12 @@ const ContentSectionHouse = ({ title, text, imageUrl, reverse = false }) => {
         </Grid>
 
         <Grid item xs={12} md={6} className="imagePrincipalColumn">
-          <img className="imageColumn" src={imageUrl} alt="Sección Imagen" />
+          <Box
+            sx={{
+              backgroundImage: `url(${imageUrl})`,
+            }}
+            className="imagePrincipalColumnItem"
+          ></Box>
         </Grid>
       </Grid>
     </Box>

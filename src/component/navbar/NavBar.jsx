@@ -56,6 +56,7 @@ const NavBar = () => {
         }}
       >
         <Grid
+          item
           md={2}
           lg={0.9}
           className="navBarItem"

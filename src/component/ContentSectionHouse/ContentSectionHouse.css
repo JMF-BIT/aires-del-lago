@@ -1,6 +1,6 @@
 /*.boxPrincipal {
   background-color: white;
-  flex-flow: column;        esto daba incompatibilidad ni idea porq
+  flex-flow: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,6 @@
   text-shadow: black;
   font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-
   text-align: center;
 }
 
@@ -58,13 +57,18 @@
   background-color: beige;
   padding: 0;
   box-sizing: border-box;
-  padding: 0;
 }
 
 .gridContainer {
-  align-items: stretch;
-  width: 100%;
+  display: grid;
+  align-items: center;
   justify-content: space-between;
+  grid-template-columns: 1fr 1fr; /* Ajusta según sea necesario */
+  grid-template-rows: auto;
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 .textPrincipalColumn {
@@ -98,32 +102,44 @@
   justify-content: center;
   align-items: center;
   text-align: left;
+  padding-bottom: 10px;
 }
 
 .textColumn ul {
-  list-style-type: circle; /* Utiliza círculos como puntos */
-  padding-left: 20px; /* Añadir espacio a la izquierda */
+  list-style-type: circle;
+  padding-left: 20px;
 }
 
 .textColumn ul li {
-  font-size: 15px; /* Puedes ajustar el tamaño de la fuente si es necesario */
-  color: black; /* Puedes cambiar el color si lo prefieres */
-  line-height: 1.8; /* Ajuste de la altura de línea */
+  font-size: 15px;
+  color: black;
+  line-height: 1.8;
 }
 
 .imagePrincipalColumn {
   display: flex;
   height: 100%;
+  align-items: stretch;
   width: 100%;
   padding: 0;
+  min-height: 500px;
 }
 
 .imageColumn {
-  height: 100%; /* Altura automática basada en el contenido */
-  /* No sobrepasa el tamaño del contenedor */
-  width: 100%; /* Mantiene la proporción */
-  /* Se ajusta al ancho del contenedor */
-  object-fit: fill; /* Evita distorsión */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
+  object-position: center;
+}
+
+.imagePrincipalColumnItem {
+  background-size: cover;
+  background-position: "center";
+  background-repeat: "no-repeat";
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }

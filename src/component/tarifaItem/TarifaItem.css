@@ -22,7 +22,7 @@
   position: relative;
   color: black;
   background-color: #fff;
-  border: 2px solid black;
+  border: 2px solid #666666;
   width: 150px;
   flex-flow: column;
   display: flex;

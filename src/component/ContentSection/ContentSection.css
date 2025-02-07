@@ -7,7 +7,7 @@
   width: 100vw;
 }*/
 
-.boxImagePrincipalTop {
+.boxImagePrincipalTop1 {
   position: relative;
   width: 100%;
   height: 400px;
@@ -20,7 +20,7 @@
   justify-content: center;
 }
 
-.boxPrincipalTextTop {
+.boxPrincipalTextTop1 {
   position: absolute;
   height: 90%;
   width: 90%;
@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.imagePrincipalTitleText {
+.imagePrincipalTitleText1 {
   color: white;
   font-family: sans-serif;
   text-align: center;
@@ -38,7 +38,7 @@
   font-size: 55px;
 }
 
-.imagePrincipalText {
+.imagePrincipalText1 {
   font-size: 17px;
   color: white;
   font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
@@ -47,7 +47,7 @@
   text-align: center;
 }
 
-.boxGridContainer {
+.boxGridContainer1 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -61,17 +61,17 @@
   padding: 0;
 }
 
-.gridContainer {
+.gridContainer1 {
   align-items: stretch;
   width: 100%;
   justify-content: space-between;
 }
 
-.textPrincipalColumn {
+.textPrincipalColumn1 {
   height: 100%;
 }
 
-.textTitleColumn {
+.textTitleColumn1 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -79,27 +79,28 @@
   color: black;
 }
 
-.textColumn {
+.textColumn1 {
   letter-spacing: normal;
   font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   line-height: 2;
-  font-size: 17px;
+  font-size: 15px;
   color: black;
   width: 66%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
-.imagePrincipalColumn {
+.imagePrincipalColumn1 {
   height: 100vh;
   width: 100%;
   padding: 0;
 }
 
-.imageColumn {
+.imageColumn1 {
   height: 100%; /* Altura automática basada en el contenido */
   /* No sobrepasa el tamaño del contenedor */
   width: 100%; /* Mantiene la proporción */
@@ -109,11 +110,11 @@
   background-repeat: no-repeat;
 }
 
-.imagePrincipalColumnItem {
+.imagePrincipalColumnItem1 {
   background-size: cover;
   background-position: "center";
   background-repeat: "no-repeat";
   width: 100%;
   height: 100%;
-  min-height: 900px;
+  min-height: 800px;
 }
