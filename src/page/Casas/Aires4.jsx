@@ -5,8 +5,36 @@ import "../../component/ContentSectionHouse/ContentSectionHouse.css";
 import img1 from "../../imgs/ImagesCasas/Aires2/Aires2ImagenTop.jpg";
 import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
 import img3 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen2.jpg";
+import aires41 from "../../imgs/aires4/aires4-1.jpg";
+import aires42 from "../../imgs/aires4/aires4-2.jpg";
+import aires43 from "../../imgs/aires4/aires4-3.jpg";
+import aires44 from "../../imgs/aires4/aires4-4.jpg";
+import aires45 from "../../imgs/aires4/aires4-5.jpg";
+import Galery from "../../component/galeri/Galery.jsx";
 
 const Aires2 = () => {
+  const images = [
+    {
+      original: aires41,
+      thumbnail: aires41,
+    },
+    {
+      original: aires42,
+      thumbnail: aires42,
+    },
+    {
+      original: aires43,
+      thumbnail: aires43,
+    },
+    {
+      original: aires44,
+      thumbnail: aires44,
+    },
+    {
+      original: aires45,
+      thumbnail: aires45,
+    },
+  ];
   return (
     <>
       <NavBar />
@@ -74,6 +102,7 @@ const Aires2 = () => {
         imageUrl={img3}
         reverse={true} // La imagen se coloca a la izquierda
       />
+      <Galery imgs={images}></Galery>
     </>
   );
 };
