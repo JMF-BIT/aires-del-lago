@@ -25,7 +25,7 @@ const HousePhotoSlider = ({ images, initialIndex = 0 }) => {
         backgroundImage: `url(${images[currentIndex]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        transition: "all 0.5s ease",
+        transition: "all opacity 1s ease-in-out",
       }}
     />
   );

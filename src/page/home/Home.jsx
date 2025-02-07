@@ -6,6 +6,7 @@ import NavBar from "../../component/navbar/NavBar";
 import SliderHomeComponent from "../../component/sliderhome/SliderHomeComponent";
 import HousePhotoSlider from "../../component/sliderhouseshome/SliderHouse1";
 import { Card, CardContent, CardMedia } from "@mui/material";
+import { motion } from "framer-motion";
 
 import imga1 from "../../imgs/casas/aires2.jpg";
 import imga2 from "../../imgs/casas/air2.jpg";
@@ -21,20 +22,38 @@ const cardsData = [
     images: [imga1, imga2],
     title: "Aires 2",
     description: "Capacidad para 6 personas.",
+    button: "/aires2",
   },
   {
     id: 2,
     images: [imga3, imga4],
     title: "Aires 3",
     description: "Capacidad para 8 personas.",
+    button: "/aires3",
   },
   {
     id: 3,
     images: [imga5, imga6],
     title: "Aires 4",
     description: "Capacidad para 6 personas.",
+    button: "/aires4",
   },
 ];
+
+const card = ({ title, description, button }) => (
+  <div className="card">
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <motion.a
+      href={button}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="button"
+    >
+      Ver más
+    </motion.a>
+  </div>
+);
 
 const Home = () => {
   return (
@@ -56,10 +75,24 @@ const Home = () => {
               zIndex: 1,
             }}
           >
-            <Typography variant="h2" className="title">
+            <Typography
+              variant="h2"
+              className="title"
+              style={{
+                letterSpacing: 5,
+                fontFamily: "Times New Roman, Garamond, Baskerville",
+              }}
+            >
               AIRES DEL LAGO
             </Typography>
-            <Typography variant="h4" className="subtitle">
+            <Typography
+              variant="h4"
+              className="subtitle"
+              style={{
+                letterSpacing: 3,
+                fontFamily: "Times New Roman, Garamond, Baskerville",
+              }}
+            >
               Casas de Campo
             </Typography>
             <p>un lugar pensado para disfrutar.</p>
@@ -69,7 +102,11 @@ const Home = () => {
         <Box className="boxContainerText">
           <h1>¡BIENVENIDOS!</h1>
           <h2>Conoce nuestras opciones para tu merecido descanso.</h2>
-          <img src={img8} alt="Decorative Ribbon" />
+          <img
+            src={img8}
+            alt="Decorative Ribbon"
+            className="decorative-image"
+          />
           <p>
             Aires del Lago es un lugar increíble ubicado frente al lago Los
             Molinos, nuestro complejo de casas de alquiler ofrece comodidad y
@@ -110,40 +147,69 @@ const Home = () => {
             gap: "16px",
           }}
         >
-          <Grid container spacing={2} sx={{ width: "100%" }}>
+          <Grid
+            container
+            spacing={2}
+            className="gridConteinCardsHouses"
+            sx={{ width: "100%" }}
+          >
             {cardsData.map((card) => (
               <Grid item xs={12} sm={12} md={12} lg={4} key={card.id}>
-                <Card
-                  sx={{
-                    backgroundColor: "white",
-                    maxWidth: "400px",
-                    borderRadius: "10px",
-                    paddingBottom: "30px", // Espacio extra en la parte inferior
-                    border: "10px solid white", // Borde grueso estilo Polaroid
-                    boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
-                    width: "auto", // Más ancho
-                    height: "auto ", // Más alto
-                    mx: "auto", // Centrar la tarjeta
-                  }}
-                >
-                  <CardMedia sx={{ height: 300, position: "relative" }}>
-                    <HousePhotoSlider images={card.images} />
-                  </CardMedia>
-                  <CardContent>
-                    <Typography
-                      variant="h2"
-                      sx={{
-                        fontSize: "1.2rem",
-                      }}
-                    >
-                      {card.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {card.description}
-                    </Typography>
-                    <a href="#">Ver más</a>
-                  </CardContent>
-                </Card>
+                <div className="card">
+                  {" "}
+                  <Card
+                    sx={{
+                      backgroundColor: "white",
+                      maxWidth: "400px",
+                      borderRadius: "10px",
+                      paddingBottom: "5px",
+                      border: "10px solid white",
+                      boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
+                      width: "auto",
+                      height: "auto",
+                      mx: "auto",
+                    }}
+                  >
+                    <CardMedia sx={{ height: 350, position: "relative" }}>
+                      <HousePhotoSlider images={card.images} />
+                    </CardMedia>
+                    <CardContent>
+                      <Typography
+                        variant="h1"
+                        sx={{
+                          fontSize: "1.5rem",
+                          color: "black",
+                          textShadow: "3px 3px 10px rgba(0, 0, 0, 0.1)",
+                          fontFamily: "Times New Roman, Garamond, Baskerville",
+                        }}
+                      >
+                        {card.title}
+                      </Typography>
+                      <Typography variant="body2" color="#666666" mt={1}>
+                        {card.description}
+                      </Typography>
+                      <div className="card-button">
+                        <motion.a
+                          href={card.button}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Button
+                            variant="contained"
+                            sx={{
+                              backgroundColor: "rgb(228, 228, 228)",
+                              color: "black",
+                              mt: 2,
+                            }}
+                          >
+                            Ver más
+                          </Button>
+                        </motion.a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </Grid>
             ))}
           </Grid>
@@ -158,7 +224,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="icon1"
               >
-                <InstagramIcon style={{ fontSize: "80px" }} />
+                <InstagramIcon style={{ fontSize: "65px" }} />
               </a>
               <a
                 href="https://wa.me/5493518171664"
@@ -166,7 +232,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="icon2"
               >
-                <WhatsAppIcon style={{ fontSize: "80px" }} />
+                <WhatsAppIcon style={{ fontSize: "65px" }} />
               </a>
               <p>WhatsApp: +54 9 3518171664</p>
               <p>Instagram: @airesdellago_</p>
