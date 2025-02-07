@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSectionHouse from "../../component/ContentSectionHouse/ContentSectionHouse.jsx";
 import "../../component/ContentSectionHouse/ContentSectionHouse.css";
@@ -11,6 +11,7 @@ import aires23 from "../../imgs/aires2/aires2-3.jpg";
 import aires24 from "../../imgs/aires2/aires2-4.jpg";
 import aires25 from "../../imgs/aires2/aires2-5.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
+import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
 const Aires2 = () => {
   const images = [
@@ -103,7 +104,66 @@ const Aires2 = () => {
         imageUrl={img3}
         reverse={true} // La imagen se coloca a la izquierda
       />
-      <Galery imgs={images}></Galery>
+
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          paddingTop: "30px",
+        }}
+      >
+        <Grid container sx={{ maxWidth: "1200px" }}>
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop: "30px",
+            }}
+          >
+            <TarifaItem
+              texto="pileta incluida"
+              img={aires24}
+              noches="2 noches"
+              precio="USD$400"
+            />
+          </Grid>
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop: "30px",
+            }}
+          >
+            <TarifaItem
+              texto="prohibido menores"
+              img={aires25}
+              noches="3 noches"
+              precio="USD$400"
+            />
+          </Grid>
+        </Grid>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "30px",
+        }}
+      >
+        <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
+          <Galery imgs={images}></Galery>
+        </Box>
+      </Box>
     </>
   );
 };

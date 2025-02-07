@@ -79,7 +79,7 @@ const NavBar = () => {
           className="navBarItem"
           sx={{ display: { xs: "none", md: "block" }, position: "relative" }}
         >
-          <Box onClick={ChangeHouse} pb={"5px"}>
+          <Box onMouseEnter={ChangeHouse} onMoseLeave={ChangeHouse} pb={"5px"}>
             Casas
           </Box>
 

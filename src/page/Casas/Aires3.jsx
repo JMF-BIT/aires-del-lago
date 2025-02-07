@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSectionHouse from "../../component/ContentSectionHouse/ContentSectionHouse.jsx";
 import "../../component/ContentSectionHouse/ContentSectionHouse.css";
@@ -11,6 +11,7 @@ import aires33 from "../../imgs/aires3/aires3-3.jpg";
 import aires34 from "../../imgs/aires3/aires3-4.jpg";
 import aires35 from "../../imgs/aires3/aires3-5.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
+import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
 const Aires2 = () => {
   const images = [
@@ -74,7 +75,7 @@ const Aires2 = () => {
           <p key="space7" style={{ margin: "10px 0" }} />,
           "Un lugar para descansar, disfrutar y crear recuerdos inolvidables.",
         ]}
-        imageUrl={img2}
+        imageUrl={aires32}
       />
 
       <ContentSectionHouse
@@ -100,10 +101,68 @@ const Aires2 = () => {
         ].map((item, index) => (
           <li key={index}>{item}</li> // Usamos <li> para cada elemento de la lista
         ))}
-        imageUrl={img3}
+        imageUrl={aires31}
         reverse={true} // La imagen se coloca a la izquierda
       />
-      <Galery imgs={images}></Galery>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          paddingTop: "30px",
+        }}
+      >
+        <Grid container sx={{ maxWidth: "1200px" }}>
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop: "30px",
+            }}
+          >
+            <TarifaItem
+              texto="pileta incluida"
+              img={aires34}
+              noches="2 noches"
+              precio="USD$400"
+            />
+          </Grid>
+          <Grid
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingTop: "30px",
+            }}
+          >
+            <TarifaItem
+              texto="prohibido menores"
+              img={aires35}
+              noches="3 noches"
+              precio="USD$400"
+            />
+          </Grid>
+        </Grid>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "30px",
+        }}
+      >
+        <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
+          <Galery imgs={images}></Galery>
+        </Box>
+      </Box>
     </>
   );
 };

@@ -62,9 +62,9 @@
 }
 
 .gridContainer {
-  align-items: stretch;
   width: 100%;
   justify-content: space-between;
+  align-items: stretch;
 }
 
 .textPrincipalColumn {
@@ -112,18 +112,20 @@
 }
 
 .imagePrincipalColumn {
-  display: flex;
-  height: 100%;
+  background-color: black;
   width: 100%;
-  padding: 0;
+  height: auto;
+  min-height: 200px; /* Asegura que tenga al menos el alto de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageColumn {
-  height: 100%; /* Altura automática basada en el contenido */
-  /* No sobrepasa el tamaño del contenedor */
-  width: 100%; /* Mantiene la proporción */
-  /* Se ajusta al ancho del contenedor */
-  object-fit: fill; /* Evita distorsión */
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupará el ancho del contenedor */
+  height: 100%;
+  object-fit: cover;
 }

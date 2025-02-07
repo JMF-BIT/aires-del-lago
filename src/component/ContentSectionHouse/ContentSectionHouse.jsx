@@ -13,7 +13,6 @@ const ContentSectionHouse = ({
     <Box className="boxGridContainer">
       <Grid
         container
-        spacing={0}
         className="gridContainer"
         direction={reverse ? "row-reverse" : "row"} // Invierte imagen y texto si reverse = true
       >
@@ -32,10 +31,19 @@ const ContentSectionHouse = ({
             <p className="textColumn">{text}</p>
           )}
         </Grid>
-        <Grid></Grid>
-        <Grid item xs={12} md={6} className="imagePrincipalColumn">
-          <img className="imageColumn" src={imageUrl} alt="Sección Imagen" />
-        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            minHeight: "300px",
+            backgroundImage: `url(${imageUrl})`,
+            backgroundSize: "cover", // Hace que la imagen cubra todo el contenedor
+            backgroundPosition: "center", // Centra la imagen
+            backgroundRepeat: "no-repeat", // Evita que la imagen se repita
+          }}
+        ></Grid>
       </Grid>
     </Box>
   );
