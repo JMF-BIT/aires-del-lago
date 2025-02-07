@@ -1,7 +1,14 @@
 import { Grid, Box } from "@mui/material";
 import "./ContentSectionHouse.css";
+import Galery from "../galeri/Galery";
 
-const ContentSectionHouse = ({ title, text, imageUrl, reverse = false }) => {
+const ContentSectionHouse = ({
+  title,
+  text,
+  imageUrl,
+  reverse = false,
+  images,
+}) => {
   return (
     <Box className="boxGridContainer">
       <Grid
@@ -25,7 +32,7 @@ const ContentSectionHouse = ({ title, text, imageUrl, reverse = false }) => {
             <p className="textColumn">{text}</p>
           )}
         </Grid>
-
+        <Grid></Grid>
         <Grid item xs={12} md={6} className="imagePrincipalColumn">
           <img className="imageColumn" src={imageUrl} alt="Sección Imagen" />
         </Grid>
