@@ -11,7 +11,6 @@ import aires23 from "../../imgs/aires2/aires2-3.jpg";
 import aires24 from "../../imgs/aires2/aires2-4.jpg";
 import aires25 from "../../imgs/aires2/aires2-5.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
-import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
 const Aires2 = () => {
   const images = [
@@ -60,19 +59,12 @@ const Aires2 = () => {
         title="BIENVENIDOS A AIRES 2"
         text={[
           "Ubicada en un entorno natural privilegiado, Aires 2 es una casa pensada para el descanso, la comodidad y el disfrute. Con capacidad para hasta 6 personas, esta casa combina la tranquilidad del paisaje serrano con todas las comodidades de un hogar acogedor y funcional.",
-          <p key="space1" style={{ margin: "10px 0" }} />,
           "Su amplio living-comedor invita a compartir momentos inolvidables, mientras que la cocina completamente equipada ofrece todo lo necesario para preparar deliciosas comidas en un ambiente cálido y confortable.",
-          <p key="space2" style={{ margin: "10px 0" }} />,
           "La casa cuenta con dos dormitorios, uno de ellos matrimonial en suite, y dos baños completos, garantizando privacidad y bienestar para todos los huéspedes.",
-          <p key="space3" style={{ margin: "10px 0" }} />,
           "Espacios exteriores para disfrutar",
-          <p key="space4" style={{ margin: "10px 0" }} />,
           "El exterior está diseñado para el relax y la conexión con la naturaleza. Su amplia galería con asador es el lugar ideal para reuniones al aire libre, mientras que la pileta privada invita a refrescarse en los días soleados con vistas al entorno serrano.",
-          <p key="space5" style={{ margin: "10px 0" }} />,
           "Además, la casa cuenta con cochera techada y un jardín espacioso, perfecto para disfrutar del aire libre en total tranquilidad.",
-          <p key="space6" style={{ margin: "10px 0" }} />,
           "Un lugar perfecto en las Sierras de Córdoba. Cada rincón está pensado para ofrecer una experiencia única, donde la naturaleza y el confort se encuentran en perfecta armonía.",
-          <p key="space7" style={{ margin: "10px 0" }} />,
           "Un lugar para descansar, disfrutar y crear recuerdos inolvidables.",
         ]}
         imageUrl={img2}
@@ -109,57 +101,23 @@ const Aires2 = () => {
         sx={{
           width: "100%",
           display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          paddingTop: "30px",
-        }}
-      >
-        <Grid container sx={{ maxWidth: "1200px" }}>
-          <Grid
-            xs={12}
-            md={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingTop: "30px",
-            }}
-          >
-            <TarifaItem
-              texto="pileta incluida"
-              img={aires24}
-              noches="2 noches"
-              precio="USD$400"
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingTop: "30px",
-            }}
-          >
-            <TarifaItem
-              texto="prohibido menores"
-              img={aires25}
-              noches="3 noches"
-              precio="USD$400"
-            />
-          </Grid>
-        </Grid>
-      </Box>
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           paddingTop: "30px",
         }}
       >
+        <h1
+          style={{
+            fontSize: "36px",
+            fontWeight: "bold",
+            color: "#333",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+          }}
+        >
+          GALERIA DE FOTOS
+        </h1>
         <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
           <Galery imgs={images}></Galery>
         </Box>

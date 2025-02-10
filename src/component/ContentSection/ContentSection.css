@@ -7,7 +7,7 @@
   width: 100vw;
 }*/
 
-.boxImagePrincipalTop {
+.boxImagePrincipalTop1 {
   position: relative;
   width: 100%;
   height: 400px;
@@ -20,17 +20,17 @@
   justify-content: center;
 }
 
-.boxPrincipalTextTop {
+.boxPrincipalTextTop1 {
   position: absolute;
   height: 90%;
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: stretch;
 }
 
-.imagePrincipalTitleText {
+.imagePrincipalTitleText1 {
   color: white;
   font-family: sans-serif;
   text-align: center;
@@ -38,40 +38,48 @@
   font-size: 55px;
 }
 
-.imagePrincipalText {
+.imagePrincipalText1 {
   font-size: 17px;
-  color: white;
+  color: azure;
+  text-shadow: black;
   font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  margin: 10px;
+
   text-align: center;
 }
 
-.boxGridContainer {
+.boxGridContainer1 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: whitesmoke;
   padding: 0;
-  border: 1px solid #ddd;
   box-sizing: border-box;
   padding: 0;
 }
 
-.gridContainer {
-  align-items: stretch;
+.gridContainer1 {
   width: 100%;
   justify-content: space-between;
+  align-items: stretch;
 }
 
-.textPrincipalColumn {
+.textPrincipalColumn1 {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
   height: 100%;
+  padding: 0;
+  background-color: whitesmoke;
 }
 
-.textTitleColumn {
+.textTitleColumn1 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -79,41 +87,47 @@
   color: black;
 }
 
-.textColumn {
+.textColumn1 {
   letter-spacing: normal;
   font-family: "Avenir", "Avenir Next", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   line-height: 2;
-  font-size: 17px;
+  font-size: 15px;
   color: black;
   width: 66%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
-.imagePrincipalColumn {
-  height: 100vh;
+.textColumn ul {
+  list-style-type: circle; /* Utiliza círculos como puntos */
+  padding-left: 20px; /* Añadir espacio a la izquierda */
+}
+
+.textColumn ul li {
+  font-size: 15px; /* Puedes ajustar el tamaño de la fuente si es necesario */
+  color: black; /* Puedes cambiar el color si lo prefieres */
+  line-height: 1.8; /* Ajuste de la altura de línea */
+}
+
+.imagePrincipalColumn1 {
+  background-color: black;
   width: 100%;
-  padding: 0;
+  height: auto;
+  min-height: 200px; /* Asegura que tenga al menos el alto de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.imageColumn {
-  height: 100%; /* Altura automática basada en el contenido */
-  /* No sobrepasa el tamaño del contenedor */
-  width: 100%; /* Mantiene la proporción */
-  /* Se ajusta al ancho del contenedor */
-  object-fit: fill; /* Evita distorsión */
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.imagePrincipalColumnItem {
-  background-size: cover;
-  background-position: "center";
-  background-repeat: "no-repeat";
-  width: 100%;
+.imageColumn1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupará el ancho del contenedor */
   height: 100%;
-  min-height: 900px;
+  object-fit: cover;
 }

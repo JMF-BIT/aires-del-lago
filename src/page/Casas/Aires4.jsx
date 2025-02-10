@@ -13,7 +13,7 @@ import aires45 from "../../imgs/aires4/aires4-5.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
 import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
-const Aires2 = () => {
+const Aires4 = () => {
   const images = [
     {
       original: aires41,
@@ -58,21 +58,14 @@ const Aires2 = () => {
       <ContentSectionHouse
         title="BIENVENIDOS A AIRES 4"
         text={[
-          "Ubicada en un entorno natural privilegiado, Aires 4 es una casa pensada para el descanso, la comodidad y el disfrute. Con capacidad para hasta 6 personas, estA CASA combina la tranquilidad del paisaje serrano con todas las comodidades de un hogar acogedor y funcional.",
-          <p key="space1" style={{ margin: "10px 0" }} />,
-          "Su amplio living-comedor invita a compartir momentos inolvidables, mientras que la cocina completamente equipada ofrece todo lo necesario para preparar deliciosas comidas en un ambiente cálido y confortable.",
-          <p key="space2" style={{ margin: "10px 0" }} />,
-          "La casa cuenta con TRES dormitorios, uno de ellos matrimonial en suite, y dos baños completos, garantizando privacidad y bienestar para todos los huéspedes.",
-          <p key="space3" style={{ margin: "10px 0" }} />,
-          "Espacios exteriores para disfrutar",
-          <p key="space4" style={{ margin: "10px 0" }} />,
-          "El exterior  está diseñado para el relax y la conexión con la naturaleza. Su amplia galería con asador es el lugar ideal para reuniones al aire libre, mientras que la pileta privada invita a refrescarse en los días soleados con vistas al entorno serrano.",
-          <p key="space5" style={{ margin: "10px 0" }} />,
+          "Ubicada en un entorno natural privilegiado, Aires 4 es una casa diseñada para el descanso, la comodidad y el disfrute. Con capacidad para hasta seis personas, esta casa combina la tranquilidad del paisaje serrano con todas las comodidades de un hogar acogedor y funcional.",
+          "Su amplio living-comedor invita a compartir momentos inolvidables, mientras que la cocina, completamente equipada, ofrece todo lo necesario para preparar deliciosas comidas en un ambiente cálido y confortable.",
+          "La casa cuenta con tres dormitorios, uno de ellos matrimonial en suite, y dos baños completos, garantizando privacidad y bienestar para todos los huéspedes.",
+          "Espacios exteriores para disfrutar.",
+          "El exterior está diseñado para el relax y la conexión con la naturaleza. Su amplia galería con asador es el lugar ideal para reuniones al aire libre, mientras que la pileta privada invita a refrescarse en los días soleados con vistas al entorno serrano.",
           "Además, la casa cuenta con cochera techada y un jardín espacioso, perfecto para disfrutar del aire libre en total tranquilidad.",
-          <p key="space6" style={{ margin: "10px 0" }} />,
-          "Un lugar perfecto en las Sierras de Córdoba. Cada rincón está pensado para ofrecer una experiencia única, donde la naturaleza y el confort se encuentran en perfecta armonía.",
-          <p key="space7" style={{ margin: "10px 0" }} />,
-          "Un lugar para descansar, disfrutar y crear recuerdos inolvidables.",
+          "Un lugar perfecto en las Sierras de Córdoba. Cada rincón ha sido pensado para ofrecer una experiencia única, donde la naturaleza y el confort se encuentran en perfecta armonía.",
+          "Un espacio para descansar, disfrutar y crear recuerdos inolvidables.",
         ]}
         imageUrl={img2}
       />
@@ -103,52 +96,6 @@ const Aires2 = () => {
         imageUrl={img3}
         reverse={true} // La imagen se coloca a la izquierda
       />
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          paddingTop: "30px",
-        }}
-      >
-        <Grid container sx={{ maxWidth: "1200px" }}>
-          <Grid
-            xs={12}
-            md={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingTop: "30px",
-            }}
-          >
-            <TarifaItem
-              texto="pileta incluida"
-              img={aires44}
-              noches="2 noches"
-              precio="USD$400"
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingTop: "30px",
-            }}
-          >
-            <TarifaItem
-              texto="prohibido menores"
-              img={aires45}
-              noches="3 noches"
-              precio="USD$400"
-            />
-          </Grid>
-        </Grid>
-      </Box>
 
       <Box
         sx={{
@@ -167,4 +114,4 @@ const Aires2 = () => {
   );
 };
 
-export default Aires2;
+export default Aires4;
