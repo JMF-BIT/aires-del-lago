@@ -54,7 +54,9 @@ const Contact = () => {
     <>
       <NavBar />
       <Box className="contactContainer">
-        <Box className="contactImgContainer">Contacto</Box>
+        <Box className="contactImgContainer">
+          <h1>Contacto</h1>
+        </Box>
         <Box className="contactTextContainerBox">
           <Grid container className="contactTextContainer">
             <Grid
@@ -72,7 +74,7 @@ const Contact = () => {
                 <Box className="contactTextContainerItem-logo">
                   <FmdGoodIcon sx={{ fontSize: "60px", color: "grey" }} />
                 </Box>
-                <Box className="contactTextContainerItem-title">UBICACIÓN</Box>
+                <Box className="contactTextContainerItem-title">Ubicación</Box>
                 <Box className="contactTextContainerItem-text"></Box>
               </Box>
             </Grid>
@@ -91,7 +93,7 @@ const Contact = () => {
                 <Box className="contactTextContainerItem-logo">
                   <InstagramIcon sx={{ fontSize: "60px", color: "grey" }} />
                 </Box>
-                <Box className="contactTextContainerItem-title">INSTAGRAM</Box>
+                <Box className="contactTextContainerItem-title">Instagram</Box>
                 <Box className="contactTextContainerItem-text"></Box>
               </Box>
             </Grid>

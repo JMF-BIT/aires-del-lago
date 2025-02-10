@@ -1,4 +1,7 @@
 import { Box, Grid } from "@mui/material";
+import "./Aires2.css";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSectionHouse from "../../component/ContentSectionHouse/ContentSectionHouse.jsx";
 import "../../component/ContentSectionHouse/ContentSectionHouse.css";
@@ -109,11 +112,13 @@ const Aires2 = () => {
       >
         <h1
           style={{
-            fontSize: "36px",
+            fontSize: "30px",
             fontWeight: "bold",
-            color: "#333",
+            color: "black",
             textTransform: "uppercase",
             letterSpacing: "2px",
+            paddingTop: "50px",
+            fontFamily: "Times New Roman, Garamond, Baskerville",
           }}
         >
           GALERIA DE FOTOS
@@ -121,6 +126,31 @@ const Aires2 = () => {
         <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
           <Galery imgs={images}></Galery>
         </Box>
+      </Box>
+
+      <Box className="boxConteinerFooter">
+        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
+          <footer className="footer">
+            <a
+              href="https://www.instagram.com/airesdellago_/"
+              target="_blanck"
+              rel="noopener noreferrer"
+              className="icon1"
+            >
+              <InstagramIcon style={{ fontSize: "65px" }} />
+            </a>
+            <a
+              href="https://wa.me/5493518171664"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon2"
+            >
+              <WhatsAppIcon style={{ fontSize: "65px" }} />
+            </a>
+            <p>WhatsApp: +54 9 3518171664</p>
+            <p>Instagram: @airesdellago_</p>
+          </footer>
+        </Grid>
       </Box>
     </>
   );

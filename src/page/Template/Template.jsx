@@ -1,10 +1,13 @@
-import { Box } from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Box, Grid } from "@mui/material";
 import "../../component/ContentSection/ContentSection.css";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSection from "../../component/ContentSection/ContentSection";
 import img1 from "../../imgs/ImagesNosotros/NosotrosImagePrincipalTop.jpg";
 import img2 from "../../imgs/ImagesNosotros/NosotrosCasa1.jpg";
 import img3 from "../../imgs/ImagesNosotros/NosotrosUbicacion.jpg";
+import "./Template.css";
 
 const Template = () => {
   return (
@@ -18,8 +21,11 @@ const Template = () => {
         }}
         className="boxImagePrincipalTop"
       >
-        <Box className="boxPrincipalTextTop">
-          <h1 className="imagePrincipalTitleText">¡QUIENES SOMOS?</h1>
+        <Box
+          className="boxPrincipalTextTop"
+          style={{ fontFamily: "Times New Roman, Garamond, Baskerville" }}
+        >
+          <h1 className="imagePrincipalTitleText">¿QUIENES SOMOS?</h1>
         </Box>
       </Box>
 
@@ -49,6 +55,31 @@ const Template = () => {
         imageUrl={img3}
         reverse={true} // La imagen se coloca a la izquierda
       />
+
+      <Box className="boxConteinerFooter">
+        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
+          <footer className="footer">
+            <a
+              href="https://www.instagram.com/airesdellago_/"
+              target="_blanck"
+              rel="noopener noreferrer"
+              className="icon1"
+            >
+              <InstagramIcon style={{ fontSize: "65px" }} />
+            </a>
+            <a
+              href="https://wa.me/5493518171664"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon2"
+            >
+              <WhatsAppIcon style={{ fontSize: "65px" }} />
+            </a>
+            <p>WhatsApp: +54 9 3518171664</p>
+            <p>Instagram: @airesdellago_</p>
+          </footer>
+        </Grid>
+      </Box>
     </>
   );
 };

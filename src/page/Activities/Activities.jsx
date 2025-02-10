@@ -1,10 +1,12 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import ContentSectionActivities from "../../component/ContentSectionActivities/ContentSectionActivities.jsx";
 import "../../component/ContentSectionActivities/ContentSectionActivities.css";
 import img1 from "../../imgs/ImagesActivities/ImagePrincipalTop.jpg";
-import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
-import img3 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen2.jpg";
+import img4 from "../../imgs/ImagesActivities/cancha.jpg";
+import img5 from "../../imgs/ImagesActivities/activ.jpg";
 
 const Activities = () => {
   return (
@@ -18,7 +20,10 @@ const Activities = () => {
         }}
         className="boxImagePrincipalTop"
       >
-        <Box className="boxPrincipalTextTop">
+        <Box
+          className="boxPrincipalTextTop"
+          style={{ fontFamily: "Times New Roman, Garamond, Baskerville" }}
+        >
           <h1 className="imagePrincipalTitleText">Actividades</h1>
         </Box>
       </Box>
@@ -36,7 +41,7 @@ const Activities = () => {
           <p key="space4" style={{ margin: "10px 0" }} />,
           "El exterior está diseñado para el relax y la conexión con la naturaleza. Su amplia galería con asador es el lugar ideal para reuniones al aire libre, mientras que la pileta privada invita a refrescarse en los días soleados con vistas al entorno serrano.",
         ]}
-        imageUrl={img2}
+        imageUrl={img4}
       />
 
       <ContentSectionActivities
@@ -56,9 +61,34 @@ const Activities = () => {
         ].map((item, index) => (
           <li key={index}>{item}</li> // Usamos <li> para cada elemento de la lista
         ))}
-        imageUrl={img3}
+        imageUrl={img5}
         reverse={true} // La imagen se coloca a la izquierda
       />
+
+      <Box className="boxConteinerFooter">
+        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
+          <footer className="footer">
+            <a
+              href="https://www.instagram.com/airesdellago_/"
+              target="_blanck"
+              rel="noopener noreferrer"
+              className="icon1"
+            >
+              <InstagramIcon style={{ fontSize: "65px" }} />
+            </a>
+            <a
+              href="https://wa.me/5493518171664"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon2"
+            >
+              <WhatsAppIcon style={{ fontSize: "65px" }} />
+            </a>
+            <p>WhatsApp: +54 9 3518171664</p>
+            <p>Instagram: @airesdellago_</p>
+          </footer>
+        </Grid>
+      </Box>
     </>
   );
 };
