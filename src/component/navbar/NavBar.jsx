@@ -101,7 +101,7 @@ const NavBar = () => {
           lg={0.9}
           className="navBarItem"
           sx={{ display: { xs: "none", md: "block" } }}
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/actividades")}
         >
           Actividades
         </Grid>

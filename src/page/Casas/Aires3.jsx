@@ -1,10 +1,12 @@
 import { Box, Grid } from "@mui/material";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSectionHouse from "../../component/ContentSectionHouse/ContentSectionHouse.jsx";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import "../../component/ContentSectionHouse/ContentSectionHouse.css";
-import img1 from "../../imgs/ImagesCasas/Aires2/Aires2ImagenTop.jpg";
-import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
-import img3 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen2.jpg";
+import img1 from "../../imgs/ImagesCasas/Aires3/ImageTop.jpg";
+import img2 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
+import img3 from "../../imgs/ImagesCasas/Aires3/air32.jpg";
 import aires31 from "../../imgs/aires3/aires3-1.jpg";
 import aires32 from "../../imgs/aires3/aires3-2.jpg";
 import aires33 from "../../imgs/aires3/aires3-3.jpg";
@@ -68,7 +70,7 @@ const Aires3 = () => {
           "Un lugar perfecto en las Sierras de Córdoba. Cada rincón está pensado para ofrecer una experiencia única, donde la naturaleza y el confort se encuentran en perfecta armonía.",
           "Un lugar para descansar, disfrutar y crear recuerdos inolvidables.",
         ]}
-        imageUrl={aires32}
+        imageUrl={img2}
       />
 
       <ContentSectionHouse
@@ -94,7 +96,7 @@ const Aires3 = () => {
         ].map((item, index) => (
           <li key={index}>{item}</li> // Usamos <li> para cada elemento de la lista
         ))}
-        imageUrl={aires31}
+        imageUrl={img3}
         reverse={true} // La imagen se coloca a la izquierda
       />
 
@@ -102,14 +104,53 @@ const Aires3 = () => {
         sx={{
           width: "100%",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           paddingTop: "30px",
         }}
       >
+        <h1
+          style={{
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: "black",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+            paddingTop: "50px",
+            fontFamily: "Times New Roman, Garamond, Baskerville",
+          }}
+        >
+          GALERIA DE FOTOS
+        </h1>
         <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
           <Galery imgs={images}></Galery>
         </Box>
+      </Box>
+
+      <Box className="boxConteinerFooter">
+        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
+          <footer className="footer">
+            <a
+              href="https://www.instagram.com/airesdellago_/"
+              target="_blanck"
+              rel="noopener noreferrer"
+              className="icon1"
+            >
+              <InstagramIcon style={{ fontSize: "65px" }} />
+            </a>
+            <a
+              href="https://wa.me/5493518171664"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon2"
+            >
+              <WhatsAppIcon style={{ fontSize: "65px" }} />
+            </a>
+            <p>WhatsApp: +54 9 3518171664</p>
+            <p>Instagram: @airesdellago_</p>
+          </footer>
+        </Grid>
       </Box>
     </>
   );

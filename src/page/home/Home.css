@@ -11,12 +11,10 @@
   font-weight: bold;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.889);
   padding-top: 50px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .subtitle {
   font-size: 1.5rem;
-
   font-weight: bold;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }

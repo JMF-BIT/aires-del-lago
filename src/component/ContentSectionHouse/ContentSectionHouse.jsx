@@ -16,14 +16,14 @@ const ContentSectionHouse = ({
         className="gridContainer"
         direction={reverse ? "row-reverse" : "row"} // Invierte imagen y texto si reverse = true
       >
-        <Grid item xs={12} md={6} className="textPrincipalColumn">
+        <Grid item xs={12} md={6} className="textPrincipalColumn1">
           <h1 className="textTitleColumn">
             <strong>{title}</strong>
           </h1>
           {/* Aquí verificamos si text es un array y luego lo mapeamos */}
           {Array.isArray(text) ? (
             text.map((paragraph, index) => (
-              <p key={index} className="textColumn">
+              <p key={index} className="textColumn1">
                 {paragraph}
               </p>
             ))

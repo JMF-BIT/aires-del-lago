@@ -15,7 +15,6 @@ import imga4 from "../../imgs/casas/air3.jpg";
 import imga5 from "../../imgs/casas/aires4.jpg";
 import imga6 from "../../imgs/casas/air4.jpg";
 import img8 from "../../imgs/home/cinta.jpg";
-import Galery from "../../component/galeri/Galery";
 
 const cardsData = [
   {
@@ -94,7 +93,7 @@ const Home = () => {
                 fontFamily: "Times New Roman, Garamond, Baskerville",
               }}
             >
-              Casas de Campo
+              casas de campo
             </Typography>
             <p>un lugar pensado para disfrutar.</p>
           </Box>
