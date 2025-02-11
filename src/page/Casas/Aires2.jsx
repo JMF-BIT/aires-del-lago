@@ -13,6 +13,7 @@ import aires22 from "../../imgs/aires2/aires2-2.jpg";
 import aires23 from "../../imgs/aires2/aires2-3.jpg";
 import aires24 from "../../imgs/aires2/aires2-4.jpg";
 import aires25 from "../../imgs/aires2/aires2-5.jpg";
+import aires26 from "../../imgs/aires2/aires2-6.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
 
 const Aires2 = () => {
@@ -36,6 +37,10 @@ const Aires2 = () => {
     {
       original: aires25,
       thumbnail: aires25,
+    },
+    {
+      original: aires26,
+      thumbnail: aires26,
     },
   ];
 
