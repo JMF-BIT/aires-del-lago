@@ -21,26 +21,38 @@ const Aires2 = () => {
     {
       original: aires21,
       thumbnail: aires21,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
     {
       original: aires22,
       thumbnail: aires22,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
     {
       original: aires23,
       thumbnail: aires23,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
     {
       original: aires24,
       thumbnail: aires24,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
     {
       original: aires25,
       thumbnail: aires25,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
     {
       original: aires26,
       thumbnail: aires26,
+      originalHeight: 600,
+      originalWidth: 1200,
     },
   ];
 
@@ -128,8 +140,13 @@ const Aires2 = () => {
         >
           GALERIA DE FOTOS
         </h1>
-        <Box sx={{ maxWidth: "1200px", maxHeight: "900px" }}>
-          <Galery imgs={images}></Galery>
+        <Box
+          sx={{
+            maxWidth: { xs: "100%", sm: "1200px" }, // 100% en móviles
+            maxHeight: { xs: "auto", sm: "900px" },
+          }}
+        >
+          <Galery imgs={images} />
         </Box>
       </Box>
 

@@ -1,6 +1,10 @@
 import { Box, Grid } from "@mui/material";
 import "./Tarifas.css";
 import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
+import img3 from "../../imgs/ImagesCasas/Aires2/Aires2ImagenTop.jpg";
+import img4 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
+import img5 from "../../imgs/ImagesCasas/Aires3/imageTop.jpg";
+
 import NavBar from "../../component/navbar/NavBar";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -50,21 +54,42 @@ const Tarifas = () => {
               </a>
             </h3>
           </Grid>
-
+          <Grid xs={12} className="tarifasItemBox">
+            <h2>Aires 2 y Aires 4</h2>
+          </Grid>
           <Grid xs={12} md={6} className="tarifasItemBox">
             <TarifaItem
               img={img2}
-              precio={"$200 USD  (MINIMO DE DOS NOCHES)"}
-              noches={"2noches"}
+              precio={"$200 USD"}
+              noches={"minimo 2 noches"}
               texto={"precio por noche para 6 personas temporada alta"}
             ></TarifaItem>
           </Grid>
           <Grid xs={12} md={6} className="tarifasItemBox">
             <TarifaItem
-              img={img2}
-              precio={"$150 USD  (MINIMO DE DOS NOCHES)"}
-              noches={"2noches"}
+              img={img3}
+              precio={"$150 USD"}
+              noches={"minimo 2 noches"}
               texto={"precio por noche para 6 personas temporada baja"}
+            ></TarifaItem>
+          </Grid>
+          <Grid xs={12} className="tarifasItemBox">
+            <h2>Aires 3</h2>
+          </Grid>
+          <Grid xs={12} md={6} className="tarifasItemBox">
+            <TarifaItem
+              img={img4}
+              precio={"$250 USD"}
+              noches={"minimo 2 noches"}
+              texto={"precio por noche para 8 personas temporada alta"}
+            ></TarifaItem>
+          </Grid>
+          <Grid xs={12} md={6} className="tarifasItemBox">
+            <TarifaItem
+              img={img5}
+              precio={"$200 USD"}
+              noches={"minimo 2 noches"}
+              texto={"precio por noche para 8 personas temporada baja"}
             ></TarifaItem>
           </Grid>
           <Grid
