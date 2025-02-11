@@ -12,6 +12,8 @@ import aires42 from "../../imgs/aires4/aires4-2.jpg";
 import aires43 from "../../imgs/aires4/aires4-3.jpg";
 import aires44 from "../../imgs/aires4/aires4-4.jpg";
 import aires45 from "../../imgs/aires4/aires4-5.jpg";
+import aires46 from "../../imgs/aires4/aires4-6.jpg";
+import aires47 from "../../imgs/aires4/aires4-7.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
 import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
@@ -36,6 +38,14 @@ const Aires4 = () => {
     {
       original: aires45,
       thumbnail: aires45,
+    },
+    {
+      original: aires46,
+      thumbnail: aires46,
+    },
+    {
+      original: aires47,
+      thumbnail: aires47,
     },
   ];
   return (
