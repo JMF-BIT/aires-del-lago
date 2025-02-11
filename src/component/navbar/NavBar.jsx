@@ -1,8 +1,8 @@
 import { Box, Grid } from "@mui/material";
 import "./NavBar.css";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import img7 from "../../imgs/home/Logo.jpg";
 
 const NavBar = () => {
@@ -10,6 +10,15 @@ const NavBar = () => {
   const [house, setHouse] = useState("closeHouse");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const handleNavigate = (path) => {
+    navigate(path);
+    setNavItem("closeNavBra"); // Cierra el menú al hacer clic
+  };
+
+  useEffect(() => {
+    setNavItem("closeNavBra");
+  }, [location.pathname]);
 
   const ChangueNavBar = () => {
     if (navItem == "openNavBra") {
@@ -85,6 +94,9 @@ const NavBar = () => {
 
           {/* Contenedor del dropdown */}
           <Box className={house}>
+            <Box className="floatingBox" onClick={() => navigate("/tarifas")}>
+              Tarifas
+            </Box>
             <Box className="floatingBox" onClick={() => navigate("/aires2")}>
               Aires 2
             </Box>
@@ -128,49 +140,56 @@ const NavBar = () => {
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/home")}
+        onClick={() => handleNavigate("/home")}
       >
         Inicio
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/quienes-somos")}
+        onClick={() => handleNavigate("/quienes-somos")}
       >
         Nosotros
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/aires2")}
+        onClick={() => handleNavigate("/tarifas")}
+      >
+        Tarifas
+      </Grid>
+      <Grid
+        className={navItem}
+        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
+        onClick={() => handleNavigate("/aires2")}
       >
         Aires 2
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/aires3")}
+        onClick={() => handleNavigate("/aires3")}
       >
         Aires 3
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/aires4")}
+        onClick={() => handleNavigate("/aires4")}
       >
         Aires 4
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/home")}
+        onClick={() => handleNavigate("/actividades")}
       >
         Actividades
       </Grid>
       <Grid
         className={navItem}
         sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => navigate("/contact")}
+        onClick={() => handleNavigate("/contact")}
       >
         Contacto
       </Grid>
