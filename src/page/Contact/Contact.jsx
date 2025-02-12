@@ -4,9 +4,9 @@ import NavBar from "../../component/navbar/NavBar";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import "./Contact.css";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import CallIcon from "@mui/icons-material/Call";
+import imgA from "../../imgs/contact1.png";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TarifaItem from "../../component/tarifaItem/TarifaItem";
+import imgB from "../../imgs/contact2.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +54,12 @@ const Contact = () => {
     <>
       <NavBar />
       <Box className="contactContainer">
-        <Box className="contactImgContainer">
+        <Box
+          className="contactImgContainer"
+          sx={{
+            backgroundImage: `url(${imgA})`,
+          }}
+        >
           <h1>Contacto</h1>
         </Box>
         <Box className="contactTextContainerBox">
@@ -115,7 +120,12 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box className="formContainerBack">
+        <Box
+          className="formContainerBack"
+          sx={{
+            backgroundImage: `url(${imgB})`,
+          }}
+        >
           <Box className="formContainer">
             <Grid container spacing={2}>
               <Grid item xs={12} className="contactTitle">
