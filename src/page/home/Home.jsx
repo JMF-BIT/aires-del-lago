@@ -15,6 +15,8 @@ import imga4 from "../../imgs/casas/air3.jpg";
 import imga5 from "../../imgs/casas/aires4.jpg";
 import imga6 from "../../imgs/casas/air4.jpg";
 import img8 from "../../imgs/home/cinta.jpg";
+import { button } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
 
 const cardsData = [
   {
@@ -56,6 +58,7 @@ const card = ({ title, description, button }) => (
 );
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <NavBar></NavBar>
@@ -190,7 +193,7 @@ const Home = () => {
                       </Typography>
                       <div className="card-button">
                         <motion.a
-                          href={card.button}
+                          onClick={() => navigate(card.button)}
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           style={{ textDecoration: "none" }}
