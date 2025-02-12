@@ -34,7 +34,7 @@ const Contact = () => {
       mensaje,
     } = formData;
 
-    const phoneNumber = "5493518171664"; // Número de WhatsApp de destino (sin + ni 0 inicial)
+    const phoneNumber = "5493518171664";
     const message = `Hola, me gustaría solicitar información:
     - Nombre: ${nombre}
     - Teléfono: ${telefono}

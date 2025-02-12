@@ -7,13 +7,13 @@ const ContentSection = ({ title, text, imageUrl, reverse = false }) => {
       <Grid
         container
         className="gridContainer1"
-        direction={reverse ? "row-reverse" : "row"} // Invierte imagen y texto si reverse = true
+        direction={reverse ? "row-reverse" : "row"}
       >
         <Grid item xs={12} md={6} className="textPrincipalColumn1">
           <h1 className="textTitleColumn1">
             <strong>{title}</strong>
           </h1>
-          {/* Aquí verificamos si text es un array y luego lo mapeamos */}
+
           {Array.isArray(text) ? (
             text.map((paragraph, index) => (
               <p key={index} className="textColumn1">
@@ -31,9 +31,9 @@ const ContentSection = ({ title, text, imageUrl, reverse = false }) => {
           sx={{
             minHeight: "300px",
             backgroundImage: `url(${imageUrl})`,
-            backgroundSize: "cover", // Hace que la imagen cubra todo el contenedor
-            backgroundPosition: "center", // Centra la imagen
-            backgroundRepeat: "no-repeat", // Evita que la imagen se repita
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         ></Grid>
       </Grid>

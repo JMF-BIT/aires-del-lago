@@ -6,12 +6,12 @@ const HousePhotoSlider = ({ images, initialIndex = 0 }) => {
 
   const handleMouseEnter = () => {
     if (images.length > 1) {
-      setCurrentIndex(1); // Cambia a la segunda imagen al hacer hover
+      setCurrentIndex(1);
     }
   };
 
   const handleMouseLeave = () => {
-    setCurrentIndex(initialIndex); // Vuelve a la imagen inicial al quitar el hover
+    setCurrentIndex(initialIndex);
   };
 
   return (

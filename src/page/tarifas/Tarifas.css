@@ -21,24 +21,24 @@
 }
 
 .footer {
-  align-items: center; /* Alinea los íconos y textos en la misma altura */
-  justify-content: center; /* Centra horizontalmente los elementos */
-  gap: 100px; /* Espaciado horizontal entre los íconos */
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }
 
 .footer a {
   display: inline-flex;
-  color: #666666; /* Color de los íconos */
-  font-size: 800px; /* Tamaño de los íconos */
-  text-decoration: none; /* Elimina el subrayado */
+  color: #666666;
+  font-size: 800px;
+  text-decoration: none;
   transition: transform 0.3s ease, color 0.3s ease;
-  margin: 0 10px; /* Espaciado horizontal entre los íconos */
+  margin: 0 10px;
   padding-bottom: 20px;
 }
 
 .footer a:hover {
-  color: #756e6e; /* Cambia el color al pasar el mouse */
-  transform: scale(1.2); /* Agranda los íconos al pasar el mouse */
+  color: #756e6e;
+  transform: scale(1.2);
 }
 
 .footer p {

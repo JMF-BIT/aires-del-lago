@@ -5,9 +5,9 @@ const Galery = ({ imgs }) => {
   return (
     <ImageGallery
       items={imgs}
-      showFullscreenButton={false} // Deshabilita el botón de pantalla completa
-      showPlayButton={false} // Deshabilita el botón de reproducción automática
-      disableSwipe={false} // Mantiene la navegación táctil activada
+      showFullscreenButton={false}
+      showPlayButton={false}
+      disableSwipe={false}
       showBullets={true}
     />
   );
