@@ -3,7 +3,7 @@ import "./Tarifas.css";
 import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
 import img3 from "../../imgs/ImagesCasas/Aires2/Aires2ImagenTop.jpg";
 import img4 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
-import img5 from "../../imgs/ImagesCasas/Aires3/imageTop.jpg";
+import img5 from "../../imgs/ImagesCasas/Aires3/air32.jpg";
 
 import NavBar from "../../component/navbar/NavBar";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
