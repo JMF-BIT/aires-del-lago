@@ -1,3 +1,17 @@
+.imagePrincipalTitleText1 {
+  text-shadow: 3px 3px 10px rgb(0, 0, 0);
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  text-align: center;
+  justify-content: center;
+}
+
+.imagePrincipalText1 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  text-align: center;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.949);
+  justify-content: center;
+}
+
 .tarifaContainer {
   width: 100%;
   display: flex;
@@ -14,10 +28,34 @@
   justify-content: center;
 }
 
+.tarifaBox h1 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  padding-top: 30px;
+}
+
+.tarifaBox h4 {
+  color: #666666;
+  text-align: center;
+}
+
 .tarifasItemBox {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tarifaBox h2 {
+  padding-top: 30px;
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  letter-spacing: 2px;
+}
+
+.gridTextBot {
+  align-items: center;
+}
+
+.gridTextBot h3 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
 }
 
 .footer {
