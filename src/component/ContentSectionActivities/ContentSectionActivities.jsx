@@ -13,13 +13,13 @@ const ContentSectionActivities = ({
         container
         spacing={0}
         className="gridContainer"
-        direction={reverse ? "row-reverse" : "row"} // Invierte imagen y texto si reverse = true
+        direction={reverse ? "row-reverse" : "row"}
       >
         <Grid item xs={12} md={6} className="textPrincipalColumn">
           <h1 className="textTitleColumn">
             <strong>{title}</strong>
           </h1>
-          {/* Aquí verificamos si text es un array y luego lo mapeamos */}
+
           {Array.isArray(text) ? (
             text.map((paragraph, index) => (
               <p key={index} className="textColumn">

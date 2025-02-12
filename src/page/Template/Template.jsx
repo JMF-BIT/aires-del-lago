@@ -53,7 +53,7 @@ const Template = () => {
           "¡Un refugio ideal para conectar con la naturaleza sin renunciar al confort! 🌿✨",
         ]}
         imageUrl={img3}
-        reverse={true} // La imagen se coloca a la izquierda
+        reverse={true}
       />
 
       <Box className="boxConteinerFooter">

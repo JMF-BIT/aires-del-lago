@@ -64,7 +64,6 @@ const Home = () => {
       <NavBar></NavBar>
       <Box className="mainBox">
         <Box className="boxSliderImage" position={"relative"}>
-          {/* link para slider de imagenes */}
           <SliderHomeComponent />
           <Box
             className="boxSliderTextImage"
@@ -73,7 +72,7 @@ const Home = () => {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              color: "white", // Ajusta el color según tu imagen
+              color: "white",
               textAlign: "center",
               zIndex: 1,
             }}
@@ -128,7 +127,7 @@ const Home = () => {
               color: "white",
               mt: 2,
               justifyContent: "center",
-            }} // margin top para separar el botón del texto
+            }}
             onClick={() => {
               const element = document.getElementById("BoxConteinHouse");
               if (element) {

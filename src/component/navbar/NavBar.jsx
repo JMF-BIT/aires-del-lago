@@ -13,7 +13,7 @@ const NavBar = () => {
   const location = useLocation();
   const handleNavigate = (path) => {
     navigate(path);
-    setNavItem("closeNavBra"); // Cierra el menú al hacer clic
+    setNavItem("closeNavBra");
   };
 
   useEffect(() => {
@@ -42,10 +42,10 @@ const NavBar = () => {
         container
         sx={{
           display: "flex",
-          justifyContent: "center", // Center items horizontally
-          alignItems: "center", // Center items vertically
+          justifyContent: "center",
+          alignItems: "center",
           padding: "5px",
-          gap: 1, // Add spacing between Grid items
+          gap: 1,
         }}
       >
         <img
@@ -58,10 +58,10 @@ const NavBar = () => {
         container
         sx={{
           display: "flex",
-          justifyContent: "center", // Center items horizontally
-          alignItems: "center", // Center items vertically
+          justifyContent: "center",
+          alignItems: "center",
           padding: "5px",
-          gap: 1, // Add spacing between Grid items
+          gap: 1,
         }}
       >
         <Grid
@@ -92,7 +92,6 @@ const NavBar = () => {
             Casas
           </Box>
 
-          {/* Contenedor del dropdown */}
           <Box className={house}>
             <Box className="floatingBox" onClick={() => navigate("/tarifas")}>
               Tarifas

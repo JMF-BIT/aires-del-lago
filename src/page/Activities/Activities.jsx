@@ -59,10 +59,10 @@ const Activities = () => {
           "Kayaks",
           "Servicio de botadura y varadura",
         ].map((item, index) => (
-          <li key={index}>{item}</li> // Usamos <li> para cada elemento de la lista
+          <li key={index}>{item}</li>
         ))}
         imageUrl={img5}
-        reverse={true} // La imagen se coloca a la izquierda
+        reverse={true}
       />
 
       <Box className="boxConteinerFooter">

@@ -101,7 +101,7 @@ const Tarifas = () => {
             }}
           >
             <h3>
-              ACLARACIONES ​ <br />
+              ACLARACIONES <br />
               <ul>
                 <li>
                   Fines de semana largos se alquilan completos sin excepción.
