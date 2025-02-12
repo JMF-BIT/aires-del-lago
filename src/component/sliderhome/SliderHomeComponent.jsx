@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Importación de imágenes
 import img1 from "../../imgs/home/1.jpg";
 import img2 from "../../imgs/home/2.jpg";
 import img3 from "../../imgs/home/4.jpg";

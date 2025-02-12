@@ -115,6 +115,7 @@ const Tarifas = () => {
               <li>LA CASA TIENE UNA capacidad máxima de 6 personas.</li>
               <li>El check-in es a las 14:00 y el check-out a las 11:00</li>
             </ul>
+
           </Grid>
         </Grid>
       </Box>

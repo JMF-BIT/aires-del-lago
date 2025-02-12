@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Asegura que el ancho sea del 100% */
+  width: 100%;
   display: flex;
   flex-flow: column;
   z-index: 1000;
@@ -28,7 +28,7 @@
 .openNavBra {
   font-size: 15px;
   margin: 5px;
-  height: 20px; /* Comienza cerrado */
+  height: 20px;
   overflow: hidden;
   transition: height 0.3s ease;
 }
@@ -48,8 +48,8 @@
 }
 
 .openHouse {
-  height: 0; /* Mantiene el contenedor sin tamaño */
-  overflow: visible; /* Permite que los elementos flotantes aparezcan */
+  height: 0;
+  overflow: visible;
 }
 
 .floatingBox {

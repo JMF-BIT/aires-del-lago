@@ -111,10 +111,10 @@ const Aires2 = () => {
           "Acceso a cancha de pádel",
           "Bajada al lago y acceso a demás servicios del barrio (canchas de fútbol, tenis, vóley, kayaks, gimnasio, sala de juegos, restaurante, etc.)",
         ].map((item, index) => (
-          <li key={index}>{item}</li> // Usamos <li> para cada elemento de la lista
+          <li key={index}>{item}</li>
         ))}
         imageUrl={img3}
-        reverse={true} // La imagen se coloca a la izquierda
+        reverse={true}
       />
 
       <Box
@@ -142,7 +142,7 @@ const Aires2 = () => {
         </h1>
         <Box
           sx={{
-            maxWidth: { xs: "100%", sm: "1200px" }, // 100% en móviles
+            maxWidth: { xs: "100%", sm: "1200px" },
             maxHeight: { xs: "auto", sm: "900px" },
           }}
         >
