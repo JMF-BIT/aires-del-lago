@@ -14,6 +14,7 @@ import aires23 from "../../imgs/aires2/aires2-3.jpg";
 import aires24 from "../../imgs/aires2/aires2-4.jpg";
 import aires25 from "../../imgs/aires2/aires2-5.jpg";
 import aires26 from "../../imgs/aires2/aires2-6.jpg";
+import aires27 from "../../imgs/aires2/aires2-7.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
 
 const Aires2 = () => {
@@ -51,6 +52,12 @@ const Aires2 = () => {
     {
       original: aires26,
       thumbnail: aires26,
+      originalHeight: 600,
+      originalWidth: 1200,
+    },
+    {
+      original: aires27,
+      thumbnail: aires27,
       originalHeight: 600,
       originalWidth: 1200,
     },

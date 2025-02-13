@@ -7,24 +7,17 @@ import "../../component/ContentSectionHouse/ContentSectionHouse.css";
 import img1 from "../../imgs/ImagesCasas/Aires3/ImageTop.jpg";
 import img2 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
 import img3 from "../../imgs/ImagesCasas/Aires3/air32.jpg";
-import aires31 from "../../imgs/aires3/aires3-1.jpg";
 import aires32 from "../../imgs/aires3/aires3-2.jpg";
 import aires33 from "../../imgs/aires3/aires3-3.jpg";
 import aires34 from "../../imgs/aires3/aires3-4.jpg";
 import aires35 from "../../imgs/aires3/aires3-5.jpg";
 import aires36 from "../../imgs/aires3/aires3-6.jpg";
 import aires37 from "../../imgs/aires3/aires3-7.jpg";
+import aires38 from "../../imgs/aires3/aires3-8.jpg";
 import Galery from "../../component/galeri/Galery.jsx";
-import TarifaItem from "../../component/tarifaItem/TarifaItem.jsx";
 
 const Aires3 = () => {
   const images = [
-    {
-      original: aires31,
-      thumbnail: aires31,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
     {
       original: aires32,
       thumbnail: aires32,
@@ -58,6 +51,12 @@ const Aires3 = () => {
     {
       original: aires37,
       thumbnail: aires37,
+      originalHeight: 600,
+      originalWidth: 1200,
+    },
+    {
+      original: aires38,
+      thumbnail: aires38,
       originalHeight: 600,
       originalWidth: 1200,
     },

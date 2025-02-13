@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import "../../component/ContentSection/ContentSection.css";
 import NavBar from "../../component/navbar/NavBar";
 import ContentSection from "../../component/ContentSection/ContentSection";
-import img1 from "../../imgs/ImagesNosotros/NosotrosImagePrincipalTop.jpg";
+import img1 from "../../imgs/contact1.png";
 import img2 from "../../imgs/ImagesNosotros/NosotrosCasa1.jpg";
 import img3 from "../../imgs/ImagesNosotros/NosotrosUbicacion.jpg";
 import "./Template.css";

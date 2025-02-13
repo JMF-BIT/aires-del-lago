@@ -135,7 +135,7 @@ const Contact = () => {
                 Completá el siguiente formulario para consultar Tarifas y
                 Disponibilidades; responderemos a la brevedad.¡Muchas gracias!
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} lg={4}>
                 <TextField
                   label="Nombre completo"
                   variant="filled"
@@ -145,7 +145,7 @@ const Contact = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
+              <Grid item xs={6} lg={4}>
                 <TextField
                   label="Teléfono"
                   variant="filled"
@@ -155,17 +155,8 @@ const Contact = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6} lg={3}>
-                <TextField
-                  label="Email"
-                  variant="filled"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={6} lg={3}>
+
+              <Grid item xs={6} lg={4}>
                 <TextField
                   label="Cantidad de personas"
                   type="number"
