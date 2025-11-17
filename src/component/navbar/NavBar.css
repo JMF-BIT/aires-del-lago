@@ -1,0 +1,60 @@
+.navBarContainer {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.navBarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.navBarItem {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.openNavBra {
+  font-size: 15px;
+  margin: 5px;
+  height: 20px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.closeNavBra {
+  height: 0;
+  overflow: hidden;
+}
+
+.openNavBra.active {
+  height: auto;
+}
+
+.closeHouse {
+  height: 0;
+  overflow: hidden;
+}
+
+.openHouse {
+  height: 0;
+  overflow: visible;
+}
+
+.floatingBox {
+  font-size: 12px;
+  position: static;
+  background: white;
+  padding: 5px;
+}

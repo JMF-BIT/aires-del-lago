@@ -1,0 +1,95 @@
+.imagePrincipalTitleText1 {
+  text-shadow: 3px 3px 10px rgb(0, 0, 0);
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  text-align: center;
+  justify-content: center;
+}
+
+.imagePrincipalText1 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  text-align: center;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.949);
+  justify-content: center;
+}
+
+.tarifaContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarifaBox {
+  color: black;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarifaBox h1 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  padding-top: 30px;
+}
+
+.tarifaBox h4 {
+  color: #666666;
+  text-align: center;
+}
+
+.tarifasItemBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarifaBox h2 {
+  padding-top: 30px;
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  letter-spacing: 2px;
+}
+
+.gridTextBot {
+  align-items: center;
+}
+
+.gridTextBot h3 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+}
+
+.footer {
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.footer a {
+  display: inline-flex;
+  color: #666666;
+  font-size: 800px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 10px;
+  padding-bottom: 20px;
+}
+
+.footer a:hover {
+  color: #756e6e;
+  transform: scale(1.2);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.gridConteinerBoxFooter {
+  text-align: center;
+  padding: 20px;
+}
+
+.boxConteinerFooter {
+  padding-top: 100px;
+}

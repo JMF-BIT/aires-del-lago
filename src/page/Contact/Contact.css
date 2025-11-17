@@ -1,0 +1,112 @@
+.contactContainer {
+  padding-top: 20px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contactImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.contactImgContainer h1 {
+  align-items: center;
+  font-size: 60px;
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  padding-top: 70px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.936);
+}
+
+.contactTextContainerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-color: #fff;
+  font-family: "Times New Roman", Garamond, "Baskerville";
+}
+.contactTextContainer {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.contactTextContainerItem {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.contactTextContainerItem-logo {
+  padding: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+
+.contactTextContainerItem-title {
+  font-size: 25px;
+  color: gray;
+}
+
+.contactTextContainerItem-text {
+  font-size: 20px;
+}
+
+.formContainerBack {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.formContainer {
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  margin: 10px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.contactTitle {
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.contactText {
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgb(128, 119, 119);
+  padding-bottom: 25px;
+}
+
+.textArea {
+  width: 300px;
+  height: 100px;
+}

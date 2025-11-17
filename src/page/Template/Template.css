@@ -1,0 +1,42 @@
+.boxPrincipalTextTop h1 {
+  font-family: "Times New Roman", Garamond, "Baskerville";
+  text-align: center;
+  transform: translateX(15vw);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.889);
+}
+
+.boxConteinerFooter {
+  padding-top: 80px;
+}
+
+.footer {
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.footer a {
+  display: inline-flex;
+  color: #666666;
+  font-size: 800px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 10px;
+  padding-bottom: 20px;
+}
+
+.footer a:hover {
+  color: #756e6e;
+  transform: scale(1.2);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.gridConteinerBoxFooter {
+  text-align: center;
+  padding: 20px;
+}
