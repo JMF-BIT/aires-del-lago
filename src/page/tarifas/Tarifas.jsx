@@ -1,147 +1,205 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import Layout from "../../component/Layout/Layout";
 import "./Tarifas.css";
-import img2 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
-import img3 from "../../imgs/ImagesCasas/Aires2/Aires2ImagenTop.jpg";
-import img4 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
-import img5 from "../../imgs/ImagesCasas/Aires3/air32.jpg";
 
-import NavBar from "../../component/navbar/NavBar";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TarifaItem from "../../component/tarifaItem/TarifaItem";
+// Images
+import img1 from "../../imgs/ImagesCasas/Aires2/Aires2Imagen1.jpg";
+import img2 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
+
+const tarifasAires2y4 = [
+  {
+    temporada: "Alta",
+    precio: "$200 USD",
+    noches: "Mínimo 2 noches",
+    descripcion: "Precio por noche para 6 personas",
+    destacado: true,
+  },
+  {
+    temporada: "Baja",
+    precio: "$150 USD",
+    noches: "Mínimo 2 noches",
+    descripcion: "Precio por noche para 6 personas",
+    destacado: false,
+  },
+];
+
+const tarifasAires3 = [
+  {
+    temporada: "Alta",
+    precio: "$250 USD",
+    noches: "Mínimo 2 noches",
+    descripcion: "Precio por noche para 8 personas",
+    destacado: true,
+  },
+  {
+    temporada: "Baja",
+    precio: "$200 USD",
+    noches: "Mínimo 2 noches",
+    descripcion: "Precio por noche para 8 personas",
+    destacado: false,
+  },
+];
+
+const aclaraciones = [
+  "Fines de semana largos se alquilan completos sin excepción.",
+  "Las tarifas pueden ser modificadas sin previo aviso.",
+  "Para confirmar la reserva, se debe abonar una seña del 50% del valor total de la estadía. La seña no es reembolsable.",
+  "El saldo restante deberá abonarse al momento de llegar al alojamiento en efectivo (pesos o dólares).",
+  "Check-in: 14:00 hs — Check-out: 11:00 hs",
+];
+
+const TarifaCard = ({ temporada, precio, noches, descripcion, destacado }) => (
+  <motion.div
+    className={`tarifa-card ${destacado ? "tarifa-card--destacado" : ""}`}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    whileHover={{ y: -5 }}
+    transition={{ duration: 0.3 }}
+  >
+    {destacado && <span className="tarifa-badge">Más solicitada</span>}
+    <span className="tarifa-temporada">Temporada {temporada}</span>
+    <div className="tarifa-precio">{precio}</div>
+    <span className="tarifa-noches">{noches}</span>
+    <p className="tarifa-descripcion">{descripcion}</p>
+  </motion.div>
+);
 
 const Tarifas = () => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <NavBar></NavBar>
-      <Box
-        sx={{
-          backgroundImage: `url(${img2})`,
-          fontSize: { xs: "10px", md: "20px", lg: "20px" },
-        }}
-        className="boxImagePrincipalTop1"
+    <Layout>
+      {/* Hero Section */}
+      <section
+        className="tarifas-hero"
+        style={{ backgroundImage: `url(${img1})` }}
       >
-        <Box className="boxPrincipalTextTop1">
-          <h1 className="imagePrincipalTitleText1">Tarifas</h1>
-          <p className="imagePrincipalText1">¡Gracias por visitarnos!</p>
-        </Box>
-      </Box>
-      <Box className="tarifaContainer">
-        <Grid container className="tarifaBox">
-          <Grid xs={12} sx={{ justifyContent: "center", display: "flex" }}>
-            <h1>Tarifas por temporada</h1>
-          </Grid>
-          <Grid
-            xs={12}
-            sx={{
-              justifyContent: "center",
-              display: "flex",
-              px: "12px",
-              textAlign: "center",
-            }}
-          >
-            <h4>
-              Temporada ALTA: entre el 1 de Diciembre y 28 de Febrero, fines de
-              semana largos y vacaciones de julio. Temporada BAJA: entre el 1 de
-              Marzo al 30 de Noviembre. Las tarifas pueden ser modificadas sin
-              previo aviso. Los precios están expresados en dólares
-              estadounidenses. El pago se realizará en Dolares o Pesos
-              argentinos de acuerdo a la cotización del dólar blue venta que
-              informa el sitio web de ámbito financiero al momento de cada pago
-              -{" "}
-              <a href="https://www.ambito.com/contenidos/dolar-informal.html">
-                https://www.ambito.com/contenidos/dolar-informal.html
+        <div className="tarifas-hero-overlay" />
+        <motion.div
+          className="tarifas-hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1>Tarifas</h1>
+          <p>Precios transparentes para tu estadía perfecta</p>
+        </motion.div>
+      </section>
+
+      {/* Info Section */}
+      <section className="tarifas-info">
+        <div className="tarifas-info-container">
+          <div className="tarifas-info-card">
+            <h3>📅 Temporada Alta</h3>
+            <p>1 de Diciembre al 28 de Febrero, fines de semana largos y vacaciones de julio</p>
+          </div>
+          <div className="tarifas-info-card">
+            <h3>🍂 Temporada Baja</h3>
+            <p>1 de Marzo al 30 de Noviembre</p>
+          </div>
+          <div className="tarifas-info-card">
+            <h3>💵 Forma de Pago</h3>
+            <p>
+              Precios en USD. Pago en dólares o pesos argentinos según cotización dólar blue venta de{" "}
+              <a href="https://www.ambito.com/contenidos/dolar-informal.html" target="_blank" rel="noopener noreferrer">
+                Ámbito Financiero
               </a>
-            </h4>
-          </Grid>
-          <Grid xs={12} className="tarifasItemBox">
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Aires 2 y 4 */}
+      <section className="tarifas-section">
+        <div className="tarifas-section-header">
+          <motion.img
+            src={img1}
+            alt="Aires 2 y Aires 4"
+            className="tarifas-section-img"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          />
+          <div>
+            <span className="section-label">6 personas</span>
             <h2>Aires 2 y Aires 4</h2>
-          </Grid>
-          <Grid xs={12} md={6} lg={4} className="tarifasItemBox">
-            <TarifaItem
-              img={img2}
-              precio={"$200 USD"}
-              noches={"Minimo 2 noches"}
-              texto={"Precio por noche para 6 personas temporada alta"}
-            ></TarifaItem>
-          </Grid>
-          <Grid xs={12} md={6} lg={4} className="tarifasItemBox">
-            <TarifaItem
-              img={img3}
-              precio={"$150 USD"}
-              noches={"Minimo 2 noches"}
-              texto={"Precio por noche para 6 personas temporada baja"}
-            ></TarifaItem>
-          </Grid>
-          <Grid xs={12} className="tarifasItemBox">
+          </div>
+        </div>
+        <div className="tarifas-cards">
+          {tarifasAires2y4.map((tarifa, index) => (
+            <TarifaCard key={index} {...tarifa} />
+          ))}
+        </div>
+      </section>
+
+      {/* Aires 3 */}
+      <section className="tarifas-section tarifas-section--alt">
+        <div className="tarifas-section-header">
+          <motion.img
+            src={img2}
+            alt="Aires 3"
+            className="tarifas-section-img"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          />
+          <div>
+            <span className="section-label">8 personas</span>
             <h2>Aires 3</h2>
-          </Grid>
-          <Grid xs={12} md={6} lg={4} className="tarifasItemBox">
-            <TarifaItem
-              img={img4}
-              precio={"$250 USD"}
-              noches={"Minimo 2 noches"}
-              texto={"Precio por noche para 8 personas temporada alta"}
-            ></TarifaItem>
-          </Grid>
-          <Grid xs={12} md={6} lg={4} className="tarifasItemBox">
-            <TarifaItem
-              img={img5}
-              precio={"$200 USD"}
-              noches={"Minimo 2 noches"}
-              texto={"Precio por noche para 8 personas temporada baja"}
-            ></TarifaItem>
-          </Grid>
-          <Grid
-            xs={12}
-            className="gridTextBot"
-            sx={{
-              justifyContent: "center",
-              px: "12px",
-            }}
-          >
-            <h3>ACLARACIONES: </h3> <br />
-            <ul>
-              <li>
-                Fines de semana largos se alquilan completos sin excepción.
-              </li>
-              <li> Las tarifas pueden ser modificadas sin previo aviso.</li>
-              <li>
-                Para confirmar la reserva, se debe abonar una seña del 50% del
-                valor total de la estadía. La seña no es reembolsable. El saldo
-                restante deberá abonarse AL MOMENTO DE LLEGAR AL ALOJAMIENTO EN
-                EFECTIVO (PESOS O DOLARES).
-              </li>{" "}
-              <li>El check-in es a las 14:00 y el check-out a las 11:00</li>
-            </ul>
-          </Grid>
-        </Grid>
-      </Box>
-      <Box className="boxConteinerFooter">
-        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
-          <footer className="footer">
-            <a
-              href="https://www.instagram.com/airesdellago_/"
-              target="_blanck"
-              rel="noopener noreferrer"
-              className="icon1"
+          </div>
+        </div>
+        <div className="tarifas-cards">
+          {tarifasAires3.map((tarifa, index) => (
+            <TarifaCard key={index} {...tarifa} />
+          ))}
+        </div>
+      </section>
+
+      {/* Aclaraciones */}
+      <section className="tarifas-aclaraciones">
+        <div className="aclaraciones-container">
+          <h3>📋 Información Importante</h3>
+          <ul>
+            {aclaraciones.map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="tarifas-cta">
+        <motion.div
+          className="tarifas-cta-content"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2>¿Listo para reservar?</h2>
+          <p>Consultá disponibilidad y asegurá tu lugar</p>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="contained"
+              className="tarifas-cta-btn"
+              onClick={() => navigate("/contact")}
             >
-              <InstagramIcon style={{ fontSize: "65px" }} />
-            </a>
-            <a
-              href="https://wa.me/5493518171664"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon2"
-            >
-              <WhatsAppIcon style={{ fontSize: "65px" }} />
-            </a>
-            <p>WhatsApp: +54 9 3518171664</p>
-            <p>Instagram: @airesdellago_</p>
-          </footer>
-        </Grid>
-      </Box>
-    </>
+              Consultar ahora
+            </Button>
+          </motion.div>
+        </motion.div>
+      </section>
+    </Layout>
   );
 };
 

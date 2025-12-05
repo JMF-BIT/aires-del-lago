@@ -1,248 +1,260 @@
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import "./Home.css";
-import { Grid, Box, Button, Typography } from "@mui/material";
-import NavBar from "../../component/navbar/NavBar";
+import {
+  Box,
+  Button,
+  Typography,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+} from "@mui/material";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import Layout from "../../component/Layout/Layout";
 import SliderHomeComponent from "../../component/sliderhome/SliderHomeComponent";
 import HousePhotoSlider from "../../component/sliderhouseshome/SliderHouse1";
-import { Card, CardContent, CardMedia } from "@mui/material";
-import { motion } from "framer-motion";
+import "./Home.css";
 
+// Images
 import imga1 from "../../imgs/casas/aires2.jpg";
 import imga2 from "../../imgs/casas/air2.jpg";
 import imga3 from "../../imgs/casas/aires3.jpg";
 import imga4 from "../../imgs/casas/air3.jpg";
 import imga5 from "../../imgs/casas/aires4.jpg";
 import imga6 from "../../imgs/casas/air4.jpg";
-import img8 from "../../imgs/home/cinta.jpg";
-import { button } from "framer-motion/client";
-import { useNavigate } from "react-router-dom";
+import ribbonImg from "../../imgs/home/cinta.jpg";
 
-const cardsData = [
+const housesData = [
   {
     id: 1,
     images: [imga1, imga2],
     title: "Aires 2",
     description: "Capacidad para 6 personas.",
-    button: "/aires2",
+    path: "/aires2",
+    features: ["2 habitaciones", "Pileta privada", "Asador"],
   },
   {
     id: 2,
     images: [imga3, imga4],
     title: "Aires 3",
     description: "Capacidad para 8 personas.",
-    button: "/aires3",
+    path: "/aires3",
+    features: ["3 habitaciones", "Pileta privada", "Asador"],
   },
   {
     id: 3,
     images: [imga5, imga6],
     title: "Aires 4",
     description: "Capacidad para 6 personas.",
-    button: "/aires4",
+    path: "/aires4",
+    features: ["2 habitaciones", "Pileta privada", "Asador"],
   },
 ];
 
-const card = ({ title, description, button }) => (
-  <div className="card">
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <motion.a
-      href={button}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="button"
-    >
-      Ver más
-    </motion.a>
-  </div>
-);
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const scrollToHouses = () => {
+    const element = document.getElementById("houses-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <>
-      <NavBar></NavBar>
-      <Box className="mainBox">
-        <Box className="boxSliderImage" position={"relative"}>
+    <Layout>
+      {/* Hero Section with Slider */}
+      <section className="hero-section">
+        <Box className="hero-slider">
           <SliderHomeComponent />
-          <Box
-            className="boxSliderTextImage"
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              color: "white",
-              textAlign: "center",
-              zIndex: 1,
-            }}
+          <div className="hero-overlay" />
+          <motion.div
+            className="hero-content"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            <Typography
-              variant="h2"
-              className="title"
-              style={{
-                letterSpacing: 5,
-                fontFamily: "Times New Roman, Garamond, Baskerville",
-              }}
-            >
+            <Typography variant="h1" className="hero-title">
               AIRES DEL LAGO
             </Typography>
-            <Typography
-              variant="h4"
-              className="subtitle"
-              style={{
-                letterSpacing: 3,
-                fontFamily: "Times New Roman, Garamond, Baskerville",
-              }}
-            >
+            <Typography variant="h2" className="hero-subtitle">
               casas de campo
             </Typography>
-            <p>un lugar pensado para disfrutar.</p>
-          </Box>
+            <p className="hero-tagline">un lugar pensado para disfrutar</p>
+            <motion.button
+              className="hero-cta"
+              onClick={scrollToHouses}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explorar casas
+            </motion.button>
+          </motion.div>
         </Box>
+      </section>
 
-        <Box className="boxContainerText">
-          <h1>¡BIENVENIDOS!</h1>
-          <h2>Conoce nuestras opciones para tu merecido descanso.</h2>
+      {/* Welcome Section */}
+      <section className="welcome-section">
+        <motion.div
+          className="welcome-content"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="section-label">Bienvenidos</span>
+          <h2 className="welcome-title">
+            Conoce nuestras opciones para tu merecido descanso
+          </h2>
           <img
-            src={img8}
-            alt="Decorative Ribbon"
-            className="decorative-image"
+            src={ribbonImg}
+            alt=""
+            className="welcome-ribbon"
+            aria-hidden="true"
           />
-          <p>
-            Aires del Lago es un lugar increíble ubicado frente al lago Los
-            Molinos, nuestro complejo de casas de alquiler ofrece comodidad y
-            elegancia. Disfruta de nuestra cancha de pádel y pileta al aire
-            libre. Ideal para familias y grupos de amigos. Relajación y
-            diversión en un entorno natural.
+          <div className="welcome-text">
             <p>
-              Veni y descubrí la experiencia perfecta, un lugar pensado para
-              vos!
+              Aires del Lago es un lugar increíble ubicado frente al lago Los
+              Molinos. Nuestro complejo de casas de alquiler ofrece comodidad y
+              elegancia. Disfruta de nuestras piletas privadas y todas las
+              comodidades del complejo.
             </p>
-          </p>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              mt: 2,
-              justifyContent: "center",
-            }}
-            onClick={() => {
-              const element = document.getElementById("BoxConteinHouse");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth", block: "start" });
-              }
-            }}
+            <p>
+              Ideal para familias y grupos de amigos. Relajación y diversión en
+              un entorno natural. Vení y descubrí la experiencia perfecta,
+              <strong> un lugar pensado para vos!</strong>
+            </p>
+          </div>
+          <motion.button
+            className="btn btn-primary"
+            onClick={scrollToHouses}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             EXPLORA NUESTRAS CASAS
-          </Button>
-        </Box>
+          </motion.button>
+        </motion.div>
+      </section>
 
-        <Box
-          id="BoxConteinHouse"
-          className="boxConteinHouse"
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "16px",
-          }}
+      {/* Houses Section */}
+      <section id="houses-section" className="houses-section">
+        <div className="section-header">
+          <span className="section-label">Alojamiento</span>
+          <h2 className="section-title">Nuestras Casas</h2>
+        </div>
+
+        <motion.div
+          className="houses-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <Grid
-            container
-            spacing={2}
-            className="gridConteinCardsHouses"
-            sx={{ width: "100%" }}
-          >
-            {cardsData.map((card) => (
-              <Grid item xs={12} sm={12} md={12} lg={4} key={card.id}>
-                <div className="card">
-                  {" "}
-                  <Card
-                    sx={{
-                      backgroundColor: "white",
-                      maxWidth: "400px",
-                      borderRadius: "10px",
-                      paddingBottom: "5px",
-                      border: "10px solid white",
-                      boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
-                      width: "auto",
-                      height: "auto",
-                      mx: "auto",
-                    }}
+          {housesData.map((house) => (
+            <motion.div
+              key={house.id}
+              className="house-card-wrapper"
+              variants={itemVariants}
+            >
+              <Card className="house-card">
+                <CardMedia className="house-card-media">
+                  <HousePhotoSlider images={house.images} />
+                </CardMedia>
+                <CardContent className="house-card-content">
+                  <Typography variant="h3" className="house-card-title">
+                    {house.title}
+                  </Typography>
+                  <Typography className="house-card-description">
+                    {house.description}
+                  </Typography>
+                  <ul className="house-card-features">
+                    {house.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                  <motion.div
+                    className="house-card-action"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <CardMedia sx={{ height: 350, position: "relative" }}>
-                      <HousePhotoSlider images={card.images} />
-                    </CardMedia>
-                    <CardContent>
-                      <Typography
-                        variant="h1"
-                        sx={{
-                          fontSize: "1.5rem",
-                          color: "black",
-                          textShadow: "3px 3px 10px rgba(0, 0, 0, 0.1)",
-                          fontFamily: "Times New Roman, Garamond, Baskerville",
-                        }}
-                      >
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body2" color="#666666" mt={1}>
-                        {card.description}
-                      </Typography>
-                      <div className="card-button">
-                        <motion.a
-                          onClick={() => navigate(card.button)}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          style={{ textDecoration: "none" }}
-                        >
-                          <Button
-                            variant="contained"
-                            sx={{
-                              backgroundColor: "rgb(228, 228, 228)",
-                              color: "black",
-                              mt: 2,
-                            }}
-                          >
-                            Ver más
-                          </Button>
-                        </motion.a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+                    <Button
+                      variant="contained"
+                      className="house-card-button"
+                      onClick={() => navigate(house.path)}
+                    >
+                      Ver más
+                    </Button>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
 
-        <Box className="boxConteinerFooter">
-          <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
-            <footer className="footer">
-              <a
-                href="https://www.instagram.com/airesdellago_/"
-                target="_blanck"
-                rel="noopener noreferrer"
-                className="icon1"
-              >
-                <InstagramIcon style={{ fontSize: "65px" }} />
-              </a>
-              <a
-                href="https://wa.me/5493518171664"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon2"
-              >
-                <WhatsAppIcon style={{ fontSize: "65px" }} />
-              </a>
-              <p>WhatsApp: +54 9 3518171664</p>
-              <p>Instagram: @airesdellago_</p>
-            </footer>
-          </Grid>
-        </Box>
-      </Box>
-    </>
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="features-grid">
+          <motion.div
+            className="feature-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="feature-icon">🏊</div>
+            <h3>Pileta Privada</h3>
+            <p>
+              Cada casa cuenta con su propia pileta para disfrutar en familia
+            </p>
+          </motion.div>
+          <motion.div
+            className="feature-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="feature-icon">🌊</div>
+            <h3>Frente al Lago</h3>
+            <p>Vistas increíbles y acceso directo al Lago Los Molinos</p>
+          </motion.div>
+          <motion.div
+            className="feature-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="feature-icon">📶</div>
+            <h3>Internet Starlink</h3>
+            <p>Conexión satelital de alta velocidad en todas las casas</p>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

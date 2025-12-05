@@ -1,197 +1,245 @@
-import { Box, Grid } from "@mui/material";
-import "./NavBar.css";
+import { Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useEffect, useState } from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import img7 from "../../imgs/home/Logo.jpg";
+import { motion, AnimatePresence } from "framer-motion";
+import "./NavBar.css";
+import logoImg from "../../imgs/home/Logo.jpg";
+
+const navLinks = [
+  { path: "/home", label: "Inicio" },
+  { path: "/quienes-somos", label: "Nosotros" },
+  {
+    label: "Casas",
+    submenu: [
+      { path: "/tarifas", label: "Tarifas" },
+      { path: "/aires2", label: "Aires 2" },
+      { path: "/aires3", label: "Aires 3" },
+      { path: "/aires4", label: "Aires 4" },
+    ],
+  },
+  { path: "/actividades", label: "Actividades" },
+  { path: "/contact", label: "Contacto" },
+];
 
 const NavBar = () => {
-  const [navItem, setNavItem] = useState("openNavBra");
-  const [house, setHouse] = useState("closeHouse");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHouseMenuOpen, setIsHouseMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const houseMenuRef = useRef(null);
+  const houseMenuTimeoutRef = useRef(null);
 
   const navigate = useNavigate();
   const location = useLocation();
-  const handleNavigate = (path) => {
-    navigate(path);
-    setNavItem("closeNavBra");
-  };
 
+  // Close mobile menu on route change
   useEffect(() => {
-    setNavItem("closeNavBra");
+    setIsMobileMenuOpen(false);
+    setIsHouseMenuOpen(false);
   }, [location.pathname]);
 
-  const ChangueNavBar = () => {
-    if (navItem == "openNavBra") {
-      setNavItem("closeNavBra");
+  // Handle scroll for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
     } else {
-      setNavItem("openNavBra");
+      document.body.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+    setIsHouseMenuOpen(false);
   };
 
-  const ChangeHouse = () => {
-    if (house == "openHouse") {
-      setHouse("closeHouse");
-    } else {
-      setHouse("openHouse");
+  const isActive = (path) => location.pathname === path;
+
+  const handleHouseMenuEnter = () => {
+    if (houseMenuTimeoutRef.current) {
+      clearTimeout(houseMenuTimeoutRef.current);
     }
+    setIsHouseMenuOpen(true);
+  };
+
+  const handleHouseMenuLeave = () => {
+    houseMenuTimeoutRef.current = setTimeout(() => {
+      setIsHouseMenuOpen(false);
+    }, 150);
   };
 
   return (
-    <Box className="navBarContainer">
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "5px",
-          gap: 1,
-        }}
-      >
-        <img
-          src={img7}
-          alt="Logo Aires Del Lago"
-          style={{ maxWidth: "120px", maxHeight: "100px" }}
-        />
-      </Grid>
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "5px",
-          gap: 1,
-        }}
-      >
-        <Grid
-          md={2}
-          lg={0.9}
-          className="navBarItem"
-          onClick={() => navigate("/home")}
-          sx={{ display: { xs: "none", md: "block" } }}
+    <Box
+      component="nav"
+      className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}
+      role="navigation"
+      aria-label="Navegación principal"
+    >
+      <div className="navbar__container">
+        {/* Logo */}
+        <motion.div
+          className="navbar__logo"
+          onClick={() => handleNavigate("/home")}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
-          Inicio
-        </Grid>
-        <Grid
-          md={2}
-          lg={0.9}
-          className="navBarItem"
-          onClick={() => navigate("/quienes-somos")}
-          sx={{ display: { xs: "none", md: "block" } }}
-        >
-          Nosotros
-        </Grid>
-        <Grid
-          md={2}
-          lg={0.9}
-          className="navBarItem"
-          sx={{ display: { xs: "none", md: "block" }, position: "relative" }}
-        >
-          <Box onMouseEnter={ChangeHouse} onMoseLeave={ChangeHouse} pb={"5px"}>
-            Casas
-          </Box>
+          <img src={logoImg} alt="Aires del Lago - Logo" />
+        </motion.div>
 
-          <Box className={house}>
-            <Box className="floatingBox" onClick={() => navigate("/tarifas")}>
-              Tarifas
-            </Box>
-            <Box className="floatingBox" onClick={() => navigate("/aires2")}>
-              Aires 2
-            </Box>
-            <Box className="floatingBox" onClick={() => navigate("/aires3")}>
-              Aires 3
-            </Box>
-            <Box className="floatingBox" onClick={() => navigate("/aires4")}>
-              Aires 4
-            </Box>
-          </Box>
-        </Grid>
-        <Grid
-          md={2}
-          lg={0.9}
-          className="navBarItem"
-          sx={{ display: { xs: "none", md: "block" } }}
-          onClick={() => navigate("/actividades")}
-        >
-          Actividades
-        </Grid>
-        <Grid
-          xs={2}
-          lg={0.9}
-          className="navBarItem"
-          sx={{ display: { xs: "none", md: "block" } }}
-          onClick={() => navigate("/contact")}
-        >
-          Contacto
-        </Grid>
-        <Grid
-          onClick={() => ChangueNavBar()}
-          md={1.5}
-          lg={0.9}
-          sx={{ display: { xs: "block", md: "none" } }}
-          className="navBarItem"
+        {/* Desktop Navigation */}
+        <ul className="navbar__menu">
+          {navLinks.map((link, index) =>
+            link.submenu ? (
+              <li
+                key={index}
+                className="navbar__item navbar__item--dropdown"
+                onMouseEnter={handleHouseMenuEnter}
+                onMouseLeave={handleHouseMenuLeave}
+                ref={houseMenuRef}
+              >
+                <button
+                  className={`navbar__link navbar__link--dropdown ${
+                    link.submenu.some((sub) => isActive(sub.path))
+                      ? "navbar__link--active"
+                      : ""
+                  }`}
+                  aria-expanded={isHouseMenuOpen}
+                  aria-haspopup="true"
+                >
+                  {link.label}
+                  <KeyboardArrowDownIcon
+                    className={`navbar__dropdown-icon ${
+                      isHouseMenuOpen ? "navbar__dropdown-icon--open" : ""
+                    }`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {isHouseMenuOpen && (
+                    <motion.ul
+                      className="navbar__submenu"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {link.submenu.map((sublink) => (
+                        <li key={sublink.path}>
+                          <button
+                            className={`navbar__submenu-link ${
+                              isActive(sublink.path)
+                                ? "navbar__submenu-link--active"
+                                : ""
+                            }`}
+                            onClick={() => handleNavigate(sublink.path)}
+                          >
+                            {sublink.label}
+                          </button>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </li>
+            ) : (
+              <li key={link.path} className="navbar__item">
+                <button
+                  className={`navbar__link ${
+                    isActive(link.path) ? "navbar__link--active" : ""
+                  }`}
+                  onClick={() => handleNavigate(link.path)}
+                >
+                  {link.label}
+                </button>
+              </li>
+            )
+          )}
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="navbar__toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMobileMenuOpen}
         >
           <MenuIcon />
-        </Grid>
-      </Grid>
+        </button>
+      </div>
 
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/home")}
-      >
-        Inicio
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/quienes-somos")}
-      >
-        Nosotros
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/tarifas")}
-      >
-        Tarifas
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/aires2")}
-      >
-        Aires 2
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/aires3")}
-      >
-        Aires 3
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/aires4")}
-      >
-        Aires 4
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/actividades")}
-      >
-        Actividades
-      </Grid>
-      <Grid
-        className={navItem}
-        sx={{ display: { xs: "block", md: "none", cursor: "pointer" } }}
-        onClick={() => handleNavigate("/contact")}
-      >
-        Contacto
-      </Grid>
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              className="navbar__mobile-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.div
+              className="navbar__mobile-menu"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ul className="navbar__mobile-list">
+                {navLinks.map((link, index) =>
+                  link.submenu ? (
+                    <li key={index} className="navbar__mobile-item">
+                      <span className="navbar__mobile-label">{link.label}</span>
+                      <ul className="navbar__mobile-submenu">
+                        {link.submenu.map((sublink) => (
+                          <li key={sublink.path}>
+                            <button
+                              className={`navbar__mobile-link ${
+                                isActive(sublink.path)
+                                  ? "navbar__mobile-link--active"
+                                  : ""
+                              }`}
+                              onClick={() => handleNavigate(sublink.path)}
+                            >
+                              {sublink.label}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li key={link.path} className="navbar__mobile-item">
+                      <button
+                        className={`navbar__mobile-link ${
+                          isActive(link.path)
+                            ? "navbar__mobile-link--active"
+                            : ""
+                        }`}
+                        onClick={() => handleNavigate(link.path)}
+                      >
+                        {link.label}
+                      </button>
+                    </li>
+                  )
+                )}
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </Box>
   );
 };

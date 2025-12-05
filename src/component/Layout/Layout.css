@@ -1,0 +1,23 @@
+/* ==============================================
+   LAYOUT COMPONENT STYLES
+   ============================================== */
+
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-off-white);
+}
+
+.layout-main {
+  flex: 1;
+  width: 100%;
+  padding-top: var(--navbar-height);
+}
+
+@media (max-width: 899px) {
+  .layout-main {
+    padding-top: var(--navbar-height-mobile);
+  }
+}
+
