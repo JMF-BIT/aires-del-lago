@@ -1,12 +1,16 @@
-import { Box, Grid } from "@mui/material";
-import NavBar from "../../component/navbar/NavBar";
-import ContentSectionHouse from "../../component/ContentSectionHouse/ContentSectionHouse.jsx";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import "../../component/ContentSectionHouse/ContentSectionHouse.css";
+import { Box, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import Layout from "../../component/Layout/Layout";
+import ContentSection from "../../component/ContentSection/ContentSection";
+import Galery from "../../component/galeri/Galery.jsx";
+import "./Aires2.css"; // Shared styles
+
+// Images
 import img1 from "../../imgs/ImagesCasas/Aires3/ImageTop.jpg";
 import img2 from "../../imgs/ImagesCasas/Aires3/air31.jpg";
 import img3 from "../../imgs/ImagesCasas/Aires3/air32.jpg";
+import aires31 from "../../imgs/aires3/aires3-1.jpg";
 import aires32 from "../../imgs/aires3/aires3-2.jpg";
 import aires33 from "../../imgs/aires3/aires3-3.jpg";
 import aires34 from "../../imgs/aires3/aires3-4.jpg";
@@ -14,173 +18,162 @@ import aires35 from "../../imgs/aires3/aires3-5.jpg";
 import aires36 from "../../imgs/aires3/aires3-6.jpg";
 import aires37 from "../../imgs/aires3/aires3-7.jpg";
 import aires38 from "../../imgs/aires3/aires3-8.jpg";
-import Galery from "../../component/galeri/Galery.jsx";
+
+const galleryImages = [
+  { original: aires31, thumbnail: aires31 },
+  { original: aires32, thumbnail: aires32 },
+  { original: aires33, thumbnail: aires33 },
+  { original: aires34, thumbnail: aires34 },
+  { original: aires35, thumbnail: aires35 },
+  { original: aires36, thumbnail: aires36 },
+  { original: aires37, thumbnail: aires37 },
+  { original: aires38, thumbnail: aires38 },
+];
+
+const services = [
+  "3 habitaciones, una matrimonial en suite.",
+  "3 baños (1 exterior para la pileta).",
+  "Capacidad para 8 personas",
+  "Amplia galería con asador",
+  "Asador equipado con parrilla y kit de asador",
+  "Pileta privada con vista al lago",
+  "Reposeras y sombrilla",
+  "Aire acondicionado en todos los espacios",
+  "Calefacción mediante calefactor tiro balanceado",
+  "Internet satelital de alta velocidad Starlink",
+  "DirecTV",
+  "Living con amplios ventanales panorámicos",
+  "Cocina comedor y living integrados",
+  "Cocina completamente equipada",
+  "Ropa blanca",
+  "Bajada al lago y acceso a servicios del barrio",
+  "Estacionamiento techado",
+];
 
 const Aires3 = () => {
-  const images = [
-    {
-      original: aires32,
-      thumbnail: aires32,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires33,
-      thumbnail: aires33,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires34,
-      thumbnail: aires34,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires35,
-      thumbnail: aires35,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires36,
-      thumbnail: aires36,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires37,
-      thumbnail: aires37,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-    {
-      original: aires38,
-      thumbnail: aires38,
-      originalHeight: 600,
-      originalWidth: 1200,
-    },
-  ];
+  const navigate = useNavigate();
 
   return (
-    <>
-      <NavBar />
-
-      <Box
-        sx={{
-          backgroundImage: `url(${img1})`,
-          fontSize: { xs: "10px", md: "20px", lg: "20px" },
-        }}
-        className="boxImagePrincipalTop"
+    <Layout>
+      {/* Hero Section */}
+      <section
+        className="casa-hero"
+        style={{ backgroundImage: `url(${img1})` }}
       >
-        <Box className="boxPrincipalTextTop">
-          <h1 className="imagePrincipalTitleText">Aires 3</h1>
-          <p className="imagePrincipalText">
-            PENSADA PARA 8 PERSONAS<br></br>CONFORT Y EXCLUSIVIDAD{" "}
-          </p>
-        </Box>
-      </Box>
+        <div className="casa-hero-overlay" />
+        <motion.div
+          className="casa-hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="casa-hero-label">Casa de campo</span>
+          <h1>Aires 3</h1>
+          <p>Pensada para 8 personas · Espacios amplios y vistas únicas</p>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="contained"
+              className="casa-hero-cta"
+              onClick={() => navigate("/contact")}
+            >
+              Consultar disponibilidad
+            </Button>
+          </motion.div>
+        </motion.div>
+      </section>
 
-      <ContentSectionHouse
-        title="BIENVENIDOS A AIRES 3"
+      {/* Description Section */}
+      <ContentSection
+        title="Bienvenidos a Aires 3"
         text={[
-          "Ubicada en un entorno natural privilegiado, Aires 3 es una casa pensada para el descanso, la comodidad y el disfrute. Con capacidad para hasta 8 personas, esta casa combina la tranquilidad del paisaje serrano con todas las comodidades de un hogar acogedor y funcional.",
-          "Su amplio living-comedor invita a compartir momentos inolvidables, mientras que la cocina completamente equipada ofrece todo lo necesario para preparar deliciosas comidas en un ambiente cálido y confortable.",
-          "La casa cuenta con tres dormitorios, uno de ellos matrimonial en suite, y dos baños completos, garantizando privacidad y bienestar para todos los huéspedes.",
-          "Espacios exteriores para disfrutar",
-          "El exterior está diseñado para el relax y la conexión con la naturaleza. Su amplia galería con asador es el lugar ideal para reuniones al aire libre, mientras que la pileta privada invita a refrescarse en los días soleados con vistas al entorno serrano.",
-          "Además, la casa cuenta con cochera techada y un jardín espacioso, perfecto para disfrutar del aire libre en total tranquilidad.",
-          "Un lugar perfecto en las Sierras de Córdoba. Cada rincón está pensado para ofrecer una experiencia única, donde la naturaleza y el confort se encuentran en perfecta armonía.",
-          "Un lugar para descansar, disfrutar y crear recuerdos inolvidables.",
+          "Aires 3 es nuestra casa más espaciosa, diseñada para grupos más grandes que buscan comodidad sin sacrificar privacidad. Con capacidad para hasta 8 personas, es perfecta para familias numerosas o grupos de amigos.",
+          "Sus tres habitaciones amplias y luminosas, junto con cuatro baños completos, garantizan espacio y confort para todos los huéspedes.",
+          "El diseño de espacios integrados permite disfrutar de momentos compartidos, mientras que los amplios ventanales ofrecen vistas panorámicas del entorno serrano.",
+          "La galería exterior con asador es el corazón de las reuniones, complementada por una pileta privada con vistas espectaculares al lago.",
         ]}
         imageUrl={img2}
       />
 
-      <ContentSectionHouse
-        title="SERVICIOS"
-        text={[
-          "3 habitaciones, una matrimonial en suite.",
-          "3 baños (1 exterior para la pileta).",
-          "Agua caliente para la ducha y la cocina.",
-          "Amplia galería con asador.",
-          "Asador equipado con parrilla y kit de asador.",
-          "Pileta privada.",
-          "Reposeras.",
-          "Aire acondicionado en todos los espacios.",
-          "Calefacción mediante calefactor tiro balanceado.",
-          "Internet satelital de alta velocidad Starlink.",
-          "DirecTV.",
-          "Living con amplios ventanales.",
-          "Cocina, comedor y living integrados.",
-          "Cocina completamente equipada con ollas, utensilios, vajilla completa, etc.",
-          "Ropa blanca.",
-          "Acceso a cancha de pádel.",
-          "Bajada al lago y acceso a demás servicios del barrio (canchas de fútbol, tenis, vóley, kayaks, gimnasio, sala de juegos, restaurante, etc.).",
-        ].map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-        imageUrl={img3}
-        reverse={true}
-      />
+      {/* Services Section */}
+      <section className="services-section">
+        <div className="services-container">
+          <motion.div
+            className="services-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="section-label">Comodidades</span>
+            <h2>Servicios incluidos</h2>
+          </motion.div>
 
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingTop: "30px",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "30px",
-            fontWeight: "bold",
-            color: "black",
-            textTransform: "uppercase",
-            letterSpacing: "2px",
-            paddingTop: "50px",
-            fontFamily: "Times New Roman, Garamond, Baskerville",
-          }}
-        >
-          GALERIA DE FOTOS
-        </h1>
-        <Box
-          sx={{
-            maxWidth: { xs: "100%", sm: "1200px" },
-            maxHeight: { xs: "auto", sm: "900px" },
-          }}
-        >
-          <Galery imgs={images} />
-        </Box>
-      </Box>
+          <motion.div
+            className="services-image"
+            style={{ backgroundImage: `url(${img3})` }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          />
 
-      <Box className="boxConteinerFooter">
-        <Grid spacing={10} item xs={12} className="gridConteinerBoxFooter">
-          <footer className="footer">
-            <a
-              href="https://www.instagram.com/airesdellago_/"
-              target="_blanck"
-              rel="noopener noreferrer"
-              className="icon1"
+          <motion.ul
+            className="services-list"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            {services.map((service, index) => (
+              <li key={index}>
+                <span className="service-check">✓</span>
+                {service}
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="gallery-section">
+        <div className="gallery-header">
+          <span className="section-label">Galería</span>
+          <h2>Conocé cada rincón</h2>
+        </div>
+        <div className="gallery-container">
+          <Galery imgs={galleryImages} />
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="casa-cta-section">
+        <motion.div
+          className="casa-cta-content"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2>¿Te gustaría alojarte en Aires 3?</h2>
+          <p>
+            Consultá disponibilidad y tarifas. Te respondemos a la brevedad.
+          </p>
+          <div className="casa-cta-buttons">
+            <Button
+              variant="contained"
+              className="btn-primary-casa"
+              onClick={() => navigate("/contact")}
             >
-              <InstagramIcon style={{ fontSize: "65px" }} />
-            </a>
-            <a
-              href="https://wa.me/5493518171664"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon2"
+              Reservar ahora
+            </Button>
+            <Button
+              variant="outlined"
+              className="btn-secondary-casa"
+              onClick={() => navigate("/tarifas")}
             >
-              <WhatsAppIcon style={{ fontSize: "65px" }} />
-            </a>
-            <p>WhatsApp: +54 9 3518171664</p>
-            <p>Instagram: @airesdellago_</p>
-          </footer>
-        </Grid>
-      </Box>
-    </>
+              Ver tarifas
+            </Button>
+          </div>
+        </motion.div>
+      </section>
+    </Layout>
   );
 };
 

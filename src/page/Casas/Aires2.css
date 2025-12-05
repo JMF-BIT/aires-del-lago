@@ -1,42 +1,273 @@
-.imagePrincipalText {
-  font-family: "Times New Roman", Garamond, "Baskerville";
-  text-align: center;
-  transform: translateX(15vw);
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.949);
-}
+/* ==============================================
+   CASA (AIRES 2/3/4) PAGE STYLES
+   ============================================== */
 
-.boxConteinerFooter {
-  padding-top: 150px;
-}
-
-.footer {
+/* ============= HERO SECTION ============= */
+.casa-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  max-height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
 }
 
-.footer a {
-  display: inline-flex;
-  color: #666666;
-  font-size: 800px;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
-  margin: 0 10px;
-  padding-bottom: 20px;
+.casa-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }
 
-.footer a:hover {
-  color: #756e6e;
-  transform: scale(1.2);
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
-  color: #333;
-}
-
-.gridConteinerBoxFooter {
+.casa-hero-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  padding: 20px;
+  color: var(--color-white);
+  padding: var(--space-4);
+}
+
+.casa-hero-label {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.casa-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  color: var(--color-white);
+  text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.casa-hero-content p {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.casa-hero-cta {
+  background: var(--color-white) !important;
+  color: var(--color-primary) !important;
+  font-weight: 600 !important;
+  padding: var(--space-3) var(--space-8) !important;
+  border-radius: var(--radius-full) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.casa-hero-cta:hover {
+  background: var(--color-off-white) !important;
+}
+
+/* ============= SERVICES SECTION ============= */
+.services-section {
+  padding: var(--space-20) var(--space-4);
+  background: var(--color-cream);
+}
+
+.services-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.services-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.services-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-10);
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.services-list li:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* ============= GALLERY SECTION ============= */
+.gallery-section {
+  padding: var(--space-20) var(--space-4);
+  background: var(--color-off-white);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.gallery-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gallery-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ============= CTA SECTION ============= */
+.casa-cta-section {
+  padding: var(--space-20) var(--space-4);
+  background: var(--color-primary);
+  text-align: center;
+}
+
+.casa-cta-content h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--space-3);
+}
+
+.casa-cta-content p {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-8);
+}
+
+.casa-cta-buttons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary-casa {
+  background: var(--color-white) !important;
+  color: var(--color-primary) !important;
+  font-weight: 600 !important;
+  padding: var(--space-3) var(--space-8) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.btn-primary-casa:hover {
+  background: var(--color-off-white) !important;
+}
+
+.btn-secondary-casa {
+  border-color: var(--color-white) !important;
+  color: var(--color-white) !important;
+  font-weight: 600 !important;
+  padding: var(--space-3) var(--space-8) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.btn-secondary-casa:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 768px) {
+  .casa-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .casa-hero-content h1 {
+    font-size: var(--text-4xl);
+  }
+  
+  .services-section,
+  .gallery-section,
+  .casa-cta-section {
+    padding: var(--space-12) var(--space-4);
+  }
+  
+  .services-image {
+    height: 250px;
+  }
+  
+  .casa-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary-casa,
+  .btn-secondary-casa {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Shared section label */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(44, 95, 75, 0.08);
+  border-radius: var(--radius-full);
 }
